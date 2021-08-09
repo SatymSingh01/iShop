@@ -1,7 +1,10 @@
 
 body {
     font-family: 'open sans';
-    overflow-x: hidden; }
+    overflow-x: hidden; 
+    margin: 20px;
+    color:#075E54
+}
   
   img:hover
   {
@@ -68,8 +71,8 @@ body {
       color: #fff; }
 .like:hover
   {
-      color: teal;
-  }
+      color:maroon;
+        }
   
   
   .tooltip-inner {
