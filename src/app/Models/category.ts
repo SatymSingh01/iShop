@@ -1,5 +1,5 @@
 export class Category {
-    category_id !: number;
-    category_name!: string;  
+    categoryId !: number;
+    categoryName!: string;  
 
 }
