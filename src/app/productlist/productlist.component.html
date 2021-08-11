@@ -7,7 +7,7 @@
                             <a><img src="{{product.productImagesrc}}" alt=""></a>
                             
                             <ul class="overlay">
-                                <li><a routerLink="/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                <li><a [routerLink]="['/product/', product.productId]" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                 <li><a class="wishlist" href="/wishlist" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
                             </ul>
                         </div>
