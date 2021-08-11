@@ -6,6 +6,9 @@ body {
     background-color: rgb(0, 0, 34);
     font-size: 0.8rem
 }
+.container{
+    margin:20px
+}
 
 .card {
     max-width: 1000px;
@@ -61,14 +64,15 @@ body {
     width: 22px;
     height: 22px;
     margin-right: 3px;
-    border: 1px solid blue;
+    border: 1px solid #023331;
     text-align: center;
     display: inline-block
 }
 
 #payment {
     margin: 0;
-    color: blue
+    color:     #023331;
+
 }
 
 .icons {
@@ -84,6 +88,7 @@ form {
 }
 
 input {
+   
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
     margin-bottom: 4vh;
@@ -131,8 +136,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 .btn {
-    background-color: rgb(23, 4, 189);
-    border-color: rgb(23, 4, 189);
+    background-color:   #023331;
+    ;
+    border-color:   #023331;
+    ;
     color: white;
     width: 100%;
     font-size: 0.7rem;
@@ -156,23 +163,44 @@ input:focus::-webkit-input-placeholder {
 }
 
 a {
-    color: black
+    color: #023331;
+
 }
 
 a:hover {
-    color: black;
+    color: #023331;
+    
     text-decoration: none
 }
 
-input[type=checkbox] {
-    width: unset;
-    margin-bottom: unset
-}
+
 
 #cvv {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
     background-repeat: no-repeat;
     background-position-x: 95%;
     background-position-y: center
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+    color: #023331;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    color: #023331;
+    border-bottom:2px solid #aca9a9;
+}
+
+.profile-tab label{
+    font-weight: 600;
+    color: #023331;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #959292;
 }
 

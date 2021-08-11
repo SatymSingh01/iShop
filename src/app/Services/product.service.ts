@@ -18,19 +18,19 @@ export class ProductService {
   constructor(private httpClient:HttpClient) { }
 
   getAll(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.ApiUrl + '/product/')
+    return this.httpClient.get<Product[]>(this.ApiUrl + '/products/')
     
   }
 
-  create(product:Product):Observable<Product>{
-    return this.httpClient.post<Product>(this.ApiUrl + '/product/', JSON.stringify(product), this.httpOptions)   
+  create(products:Product):Observable<Product>{
+    return this.httpClient.post<Product>(this.ApiUrl + '/products/', JSON.stringify(products), this.httpOptions)   
   }
 
   getById(id:number): Observable<Product> {
-    return this.httpClient.get<Product>(this.ApiUrl + '/product/' + id)    
+    return this.httpClient.get<Product>(this.ApiUrl + '/products/' + id)    
   }   
-  update(id:number, product:Product): Observable<Product> {
-    return this.httpClient.put<Product>(this.ApiUrl + '/product/' + id, JSON.stringify(product), this.httpOptions)
+  update(id:number, products:Product): Observable<Product> {
+    return this.httpClient.put<Product>(this.ApiUrl + '/products/' + id, JSON.stringify(products), this.httpOptions)
     // .pipe(
     //   catchError(this.errorHandler))
     
@@ -38,6 +38,6 @@ export class ProductService {
 
   delete(id:number)
   {
-    return this.httpClient.delete<Product>(this.ApiUrl+'/product/'+id, this.httpOptions);
+    return this.httpClient.delete<Product>(this.ApiUrl+'/products/'+id, this.httpOptions);
   }
 }
