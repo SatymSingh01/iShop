@@ -6,9 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { RetailerComponent } from './retailer/retailer.component';
-
-
-
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
@@ -24,15 +21,12 @@ import { ProductlistComponent } from './productlist/productlist.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
     NavbarComponent,
     ProductlistComponent,
     ProductComponent
   ],
-  imports: [
-    BrowserModule, 
-    AppRoutingModule
-  ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
