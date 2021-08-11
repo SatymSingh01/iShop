@@ -9,6 +9,10 @@ import { RetailerComponent } from './retailer/retailer.component';
 
 
 
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProductComponent } from './product/product.component';
+import { ProductlistComponent } from './productlist/productlist.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +25,13 @@ import { RetailerComponent } from './retailer/retailer.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+    NavbarComponent,
+    ProductlistComponent,
+    ProductComponent
+  ],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
