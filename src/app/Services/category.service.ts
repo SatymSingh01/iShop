@@ -18,20 +18,20 @@ export class CategoryService {
   constructor(private httpClient:HttpClient) { }
 
   getAll(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(this.ApiUrl + '/category/')
+    return this.httpClient.get<Category[]>(this.ApiUrl + '/categories/')
     
   }
 
   create(product:Category):Observable<Category>{
-    return this.httpClient.post<Category>(this.ApiUrl + '/category/', JSON.stringify(product), this.httpOptions)   
+    return this.httpClient.post<Category>(this.ApiUrl + '/categories/', JSON.stringify(product), this.httpOptions)   
   }
 
   getById(id:number): Observable<Category> {
-    return this.httpClient.get<Category>(this.ApiUrl + '/category/' + id)    
+    return this.httpClient.get<Category>(this.ApiUrl + '/categories/' + id)    
   }   
 
   delete(id:number)
   {
-    return this.httpClient.delete<Category>(this.ApiUrl+'/category/'+id, this.httpOptions);
+    return this.httpClient.delete<Category>(this.ApiUrl+'/categories/'+id, this.httpOptions);
   }
 }

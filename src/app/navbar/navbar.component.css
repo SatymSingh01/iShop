@@ -6,7 +6,7 @@
     padding: .5rem 1rem;
     background-color: #1b9b70;
 }
-.nav-link{
+.nav-link,.nav-item{
     color: aliceblue;
 }
 .navbar-brand{
@@ -15,7 +15,7 @@
 }
 .btn{
     
-    background-color: #1adb71ad
+    background-color: #1b9b70;
 }
 
 .d-flex{
