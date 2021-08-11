@@ -4,13 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { CustomerComponent } from './customer/customer.component';
+import { RetailerComponent } from './retailer/retailer.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomerComponent,
+    RetailerComponent
     
   ],
   imports: [
