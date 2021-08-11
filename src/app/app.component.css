@@ -1,0 +1,19 @@
+.navbar {
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: .5rem 1rem;
+    background-color: #1b9b70;
+}
+.nav-link{
+    color: aliceblue;
+}
+.navbar-brand{
+    color: aliceblue;
+    padding-top: 1%;
+}
+.btn{
+    
+    background-color: #1adb71ad
+}
