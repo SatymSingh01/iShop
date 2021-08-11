@@ -6,7 +6,7 @@ import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
-  {path:'',component: AppComponent},
+  
   {path:'productlist', component: ProductlistComponent},
   {path:'', redirectTo:'productlist',pathMatch:'full'},
   {path:'product', component: ProductComponent}
