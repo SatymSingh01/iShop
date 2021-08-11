@@ -10,6 +10,7 @@ export class RetailerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -9,22 +9,25 @@ import { RetailerComponent } from './retailer/retailer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
-    RetailerComponent
+    RetailerComponent,
+    OrderComponent,
+    NavbarComponent,
+    ProductComponent,
+    ProductlistComponent
     
+     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    NavbarComponent,
-    ProductlistComponent,
-    ProductComponent
+    HttpClientModule 
   ],
   
   providers: [],
