@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { OrderComponent } from './order/order.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { OrderComponent } from './order/order.component';
     OrderComponent,
     NavbarComponent,
     ProductComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    CartComponent
     
      
   ],
