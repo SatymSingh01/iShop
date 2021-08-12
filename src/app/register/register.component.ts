@@ -14,9 +14,11 @@ import { RetailerService } from '../Services/retailer.service';
 })
 export class RegisterComponent implements OnInit {
   submitted = false;
-  ReactiveRegister!:FormGroup;
-  customer !: Customer;
+  RetailerRegister !:FormGroup;
+  CustomerRegister !:FormGroup;
+  customer !: Customer; //1
   retailer !: Retailer;
+  userType:number=1;
   
   constructor(
     private customerservice:CustomerService,
@@ -25,7 +27,7 @@ export class RegisterComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-   this.ReactiveRegister = this.formBuilder.group(
+   this.CustomerRegister = this.formBuilder.group(
     {
       name: ['',[Validators.required,Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
@@ -44,10 +46,30 @@ export class RegisterComponent implements OnInit {
       validators: [Validation.match('password', 'confirmpassword')]
     }
   );
+
+  this.RetailerRegister = this.formBuilder.group(
+    {
+      retailerName : ['',[Validators.required,Validators.minLength(5)]],
+      retailerEmail: ['', [Validators.required, Validators.email]],
+      retailerPhone:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      retailerPassword: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+        ]
+      ],
+      confirmpassword: ['', Validators.required],
+
+    },
+    {
+      validators: [Validation.match('retailerPassword', 'confirmpassword')]
+    }
+  );
   }
   
   get f(): { [key: string]: AbstractControl } {
-    return this.ReactiveRegister.controls;
+    return this. RetailerRegister.controls;
   }
 
   // onSubmit(): void {
@@ -59,14 +81,30 @@ export class RegisterComponent implements OnInit {
 
   //   console.log(JSON.stringify(this.ReactiveRegister.value, null, 2));
   // }
-usertype:number=1;
+
+
   onSubmit(){
-    if(this.usertype==0){
-    this.customer=this.ReactiveRegister.value
+
+    if(this.userType==1){
+    this.customer=this.CustomerRegister.value
     console.log(this.customer)
-    this.customerservice.create(this.ReactiveRegister.value).subscribe(res => {
+    this.customerservice.create(this.CustomerRegister.value).subscribe(res => {
       console.log(res)
       console.log('Succesfully Registered !')
       // this.router.navigateByUrl('/loginpage/')
     });
-    }}}
+    }
+
+  else
+  {
+    this.retailer=this.RetailerRegister.value
+    console.log(this.retailer)
+    this.retailerservice.create(this.RetailerRegister.value).subscribe(res => {
+      console.log(res)
+      console.log('Succesfully Registered !')});
+  }
+  
+  }
+}
+  
+  
