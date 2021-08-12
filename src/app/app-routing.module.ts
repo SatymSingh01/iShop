@@ -9,10 +9,9 @@ import { CompareComponent } from './compare/compare.component';
 
 
 const routes: Routes = [
-  
-  {path:'productlist', component: ProductlistComponent},
-  {path:'', redirectTo:'productlist',pathMatch:'full'},
   {path:'product/:productid', component: ProductComponent},
+  {path:'productlist', component: ProductlistComponent},
+  {path:'', redirectTo:'productlist',pathMatch:'full'},  
   {path:'cart/:customerid', component: CartComponent},
   {path:'wishlist', component:WishlistComponent},
   {path:'compare', component:CompareComponent}
