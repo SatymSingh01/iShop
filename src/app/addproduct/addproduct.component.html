@@ -1,0 +1,33 @@
+<div class ="container-fluid">
+    <h1 style="text-align: center;"   font color="color:" class="btn-info"  > Add Product</h1>
+   
+    <form [formGroup]="addProduct" >
+        <div class="parameter"> 
+        <div class="form-Group ">
+            
+            <label>Product Name</label> 
+            <input formControlName="productName" type="text" class="form-control">
+     
+        </div>
+
+        <div class="form-Group">
+            <label>Product image</label>
+            <input formControlName="productimage" type="url" class="form-control">
+        </div>
+
+        <div class="form-Group">
+            <label>Product description</label>
+            <input formControlName="productdesc" type="text" class="form-control">
+        </div>
+
+        <div class="form-Group">
+            <label>Product Price</label>
+            <input formControlName="productPrice" type="number" class="form-control">
+        </div>
+        <br>
+        <button class ="btn btn-info btn-lg btn-block"  type="submit" [disabled]="addProduct.invalid" >Submit</button>
+      <!-- {{addProduct.value| json}} -->
+      </div>
+    </form>
+ 
+ </div>
