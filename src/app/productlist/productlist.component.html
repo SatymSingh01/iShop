@@ -1,26 +1,15 @@
-
-         <div class="container ml-50 p-20">
+<div class="container">
             <div class="row">
                 <ng-container *ngFor ="let product of productlist">
-                    <div class="card col-md-3">
-                        <div>
-                            <a><img src="{{product.productImagesrc}}" alt=""></a>
-                            
-                            <ul class="overlay">
-                                <li><a routerLink="/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a class="wishlist" href="/wishlist" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                        </div>
-                        
-                        
-                        <p style="white-space: nowrap;overflow:hidden;text-overflow: ellipsis; max-width: 100ch;">{{product.productName}}</p> 
-                        <p class="m-3"><strong>Price </strong>${{product.productPrice}}</p>
-                      
-                    </div>
-                </ng-container> 
-                
+                 <div class="card col-md-3">
+                        <a><img src="{{product.productImagesrc}}" alt=""></a>
+                        <ul class="social">
+                            <li><a routerLink="/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                            <li><a routerLink="/wishlist" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                        </ul>
+                           <h6 style="overflow:hidden;text-overflow: ellipsis; max-width:25ch;">{{product.productName}}</h6>
+                           <h6><strong>Price </strong>${{product.productPrice}}</h6> 
+                 </div>
+            </ng-container> 
         </div>
-    </div>
-   
-<hr>
-<!-- <router-outlet></router-outlet> -->
+</div>

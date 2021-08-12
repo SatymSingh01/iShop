@@ -3,13 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductComponent } from './product/product.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { CompareComponent } from './compare/compare.component';
 
 
 const routes: Routes = [
   
   {path:'productlist', component: ProductlistComponent},
   {path:'', redirectTo:'productlist',pathMatch:'full'},
-  {path:'product', component: ProductComponent}
+  {path:'product', component: ProductComponent},
+  {path:'wishlist', component:WishlistComponent},
+  {path:'compare', component:CompareComponent}
 ];
 
 
