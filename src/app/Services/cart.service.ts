@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { Cart } from '../Models/cart';
 
 @Injectable({
@@ -22,16 +23,51 @@ export class CartService {
     
   }
 
-  create(product:Cart):Observable<Cart>{
-    return this.httpClient.post<Cart>(this.ApiUrl + '/carts/', JSON.stringify(product), this.httpOptions)   
+  create(cart:Cart):Observable<Cart>{
+    return this.httpClient.post<Cart>(this.ApiUrl + '/carts/', JSON.stringify(cart), this.httpOptions)   
   }
 
   getById(id:number): Observable<Cart> {
     return this.httpClient.get<Cart>(this.ApiUrl + '/carts/' + id)
     
   }   
-  delete(id:number)
+  delete(id?:number)
   {
     return this.httpClient.delete<Cart>(this.ApiUrl+'/carts/'+id, this.httpOptions);
   }
+    
+  // getProducts(){
+  //   return this.productList.asObservable();
+  // }
+  // setProduct(product :any){
+  //   this.cartItemList.push(...product);
+  //   this.productList.next(product);
+  // }
+  // addtocart(product: any){
+  //   this.cartItemList.push(product);
+  //   this.productList.next(this.cartItemList);
+  //   this.getTotalPrice();
+  //   console.log(this.cartItemList);
+
+  // }
+  // getTotalPrice():  number{
+  //   let grandTotal = 0;
+  //   this.cartItemList.map((a:any)=>{
+  //     grandTotal += a.total;
+  //   })
+  //   return grandTotal
+  // }
+
+  // removecartItem(product: any){
+  //   this.cartItemList.map((a:any, index:any)=>{
+  //     if(product.id==a.id){
+  //       this.cartItemList.splice(index,1);
+  //     }
+  //   })
+  // }
+// removeallcart(){   
+
+//   this.cartItemList=[] 
+//   this.productList.next(this.cartItemList);
+// }
 }

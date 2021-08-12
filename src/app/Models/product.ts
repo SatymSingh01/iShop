@@ -14,8 +14,8 @@ export class Product {
 	retailerId !: number; 
 	productQuantity !: number; 
 	retailer!:Retailer;
-	cart!:Cart;
-	wishlist!:Wishlist;
+	
+	
 	category!:Category;
 
 }

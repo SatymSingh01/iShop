@@ -1,3 +1,6 @@
+import { Cart } from "./cart";
+import { Wishlist } from "./wishlist";
+
 export class Customer {
     customerId !: number;
     customerName!: string;
@@ -5,5 +8,7 @@ export class Customer {
     customerEmail!: string;
     customerPhone!: string;
     userType!: string;
+    cart!:Cart[];
+    wishlist!:Wishlist[];
 
 }
