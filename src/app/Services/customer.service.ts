@@ -18,16 +18,16 @@ export class CustomerService {
   constructor(private httpClient:HttpClient) { }
 
   getAll(): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(this.ApiUrl + '/customer/')
+    return this.httpClient.get<Customer[]>(this.ApiUrl + '/customers/')
     
   }
 
   create(product:Customer):Observable<Customer>{
-    return this.httpClient.post<Customer>(this.ApiUrl + '/customer/', JSON.stringify(product), this.httpOptions)   
+    return this.httpClient.post<Customer>(this.ApiUrl + '/customers/', JSON.stringify(product), this.httpOptions)   
   }
 
   getById(id:number): Observable<Customer> {
-    return this.httpClient.get<Customer>(this.ApiUrl + '/customer/' + id)    
+    return this.httpClient.get<Customer>(this.ApiUrl + '/customers/' + id)    
   }   
   update(id:number, product:Customer): Observable<Customer> {
     return this.httpClient.put<Customer>(this.ApiUrl + '/products/' + id, JSON.stringify(product), this.httpOptions)
@@ -38,6 +38,6 @@ export class CustomerService {
 
   delete(id:number)
   {
-    return this.httpClient.delete<Customer>(this.ApiUrl+'/customer/'+id, this.httpOptions);
+    return this.httpClient.delete<Customer>(this.ApiUrl+'/customers/'+id, this.httpOptions);
   }
 }

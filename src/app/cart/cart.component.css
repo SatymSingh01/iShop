@@ -1,7 +1,14 @@
+.container{
+    margin-top: 100px;
+}
 .card{
     height: 60vh;
     margin: 25px;
     padding: 25px;
+}
+.card-table img{
+    max-height: 150px;
+    max-width: 150px;
 }
 
 .center{
@@ -23,9 +30,11 @@
 h5,h6{
     font-weight: 400;
 }
-.btn{
-    background-color: rgba(5, 71, 68, 1);
-    color: white;
+.delete{
+    background-color: white;
+    border: 0;
+
+    
 }
 
 .card-table{
@@ -40,7 +49,7 @@ h5,h6{
     border-radius: .25rem;
 }
 
-.center .btn{
+.center {
     font-size: 14px !important;
     margin: top 20px !important;
     font-weight: 400;
