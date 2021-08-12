@@ -13,6 +13,10 @@ import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './cart/cart.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { CartComponent } from './cart/cart.component';
     NavbarComponent,
     ProductComponent,
     ProductlistComponent,
-    CartComponent
+    CartComponent,
+    RegisterComponent,
+    LoginComponent,
+    ChangepasswordComponent,
+    ForgotpasswordComponent
     
      
   ],
