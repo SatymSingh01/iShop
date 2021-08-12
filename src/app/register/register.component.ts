@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Customer } from '../Models/customer';
+import { Retailer } from '../Models/retailer';
 import { Validation } from '../Models/validation';
+import { CustomerService } from '../Services/customer.service';
+import { RetailerService } from '../Services/retailer.service';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +15,14 @@ import { Validation } from '../Models/validation';
 export class RegisterComponent implements OnInit {
   submitted = false;
   ReactiveRegister!:FormGroup;
-
-  constructor(private formBuilder: FormBuilder) { }
+  customer !: Customer;
+  retailer !: Retailer;
+  
+  constructor(
+    private customerservice:CustomerService,
+    private retailerservice: RetailerService,
+    private formBuilder: FormBuilder,
+    private router: Router) { }
 
   ngOnInit(): void {
    this.ReactiveRegister = this.formBuilder.group(
@@ -39,14 +50,23 @@ export class RegisterComponent implements OnInit {
     return this.ReactiveRegister.controls;
   }
 
-  onSubmit(): void {
-    this.submitted = true;
+  // onSubmit(): void {
+  //   this.submitted = true;
 
-    if (this.ReactiveRegister.invalid) {
-      return;
-    }
+  //   if (this.ReactiveRegister.invalid) {
+  //     return;
+  //   }
 
-    console.log(JSON.stringify(this.ReactiveRegister.value, null, 2));
-  }
-}
-
+  //   console.log(JSON.stringify(this.ReactiveRegister.value, null, 2));
+  // }
+usertype:number=1;
+  onSubmit(){
+    if(this.usertype==0){
+    this.customer=this.ReactiveRegister.value
+    console.log(this.customer)
+    this.customerservice.create(this.ReactiveRegister.value).subscribe(res => {
+      console.log(res)
+      console.log('Succesfully Registered !')
+      // this.router.navigateByUrl('/loginpage/')
+    });
+    }}}
