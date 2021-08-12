@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Product } from '../Models/product';
+import { ProductService } from '../Services/product.service';
 
 @Component({
   selector: 'app-addproduct',
@@ -7,16 +9,40 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./addproduct.component.css']
 })
 export class ADDPRODUCTComponent implements OnInit {
+  product!:Product;
   addProduct=new FormGroup({
     productName: new FormControl(''),
-    productimage: new FormControl(''),
-    productdesc:new FormControl(''),
-    product: new FormControl(''),
+    productImagesrc: new FormControl(''),
+    productDescription:new FormControl(''),
+    productPrice: new FormControl(''),
+    productQuantity: new FormControl('')
   })
 
-  constructor() { }
+  constructor(public fb:FormBuilder,private productservice:ProductService) { }
 
   ngOnInit(): void {
+    this.addProduct=this.fb.group(
+      {
+        addProduct:[],
+        productName:[],
+        productImagesrc:[],
+        productDescription:[],
+        productPrice: [],
+        productQuanitity:[],
+      }
+    )
+  }
+
+  addproduct()
+  {
+    this.product=this.addProduct.value
+    console.log(this.product)
+    this.productservice.create(this.addProduct.value).subscribe(res => {
+      console.log(res)
+      console.log('Product created!')
+     
+    });
+
   }
 
 }

@@ -8,7 +8,7 @@ export class Customer {
     customerEmail!: string;
     customerPhone!: string;
     userType!: string;
-    cart!:Cart[];
+    cart:Cart[]=[];
     wishlist!:Wishlist[];
 
 }

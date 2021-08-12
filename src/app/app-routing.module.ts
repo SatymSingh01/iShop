@@ -6,6 +6,9 @@ import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CompareComponent } from './compare/compare.component';
+import { RetailerComponent } from './retailer/retailer.component';
+import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
+import { OrderComponent } from './order/order.component';
 
 
 const routes: Routes = [
@@ -14,7 +17,11 @@ const routes: Routes = [
   {path:'', redirectTo:'productlist',pathMatch:'full'},  
   {path:'cart/:customerid', component: CartComponent},
   {path:'wishlist', component:WishlistComponent},
-  {path:'compare', component:CompareComponent}
+  {path:'compare', component:CompareComponent},
+  {path:'retailer', component:RetailerComponent},
+  {path:'addproduct', component:ADDPRODUCTComponent},
+  {path:'order/:customerid', component:OrderComponent}
+
 ];
 
 

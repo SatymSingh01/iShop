@@ -36,6 +36,12 @@ export class CartService {
     return this.httpClient.delete<Cart>(this.ApiUrl+'/carts/'+id, this.httpOptions);
   }
     
+  update(id:number, cart:Cart): Observable<Cart> {
+    return this.httpClient.put<Cart>(this.ApiUrl + '/carts/' + id, JSON.stringify(cart), this.httpOptions)
+    // .pipe(
+    //   catchError(this.errorHandler))
+    
+  }
   // getProducts(){
   //   return this.productList.asObservable();
   // }

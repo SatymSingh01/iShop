@@ -3,10 +3,11 @@
     <div class="col-md-7">
         <div class="left border">
             <div class="row"> <span class="header">Place Order</span>
-                <form> <span>Address :</span> <input type="text" class="row-3" placeholder="Linda Williams"> 
+                <form> 
+                    <span>Address :</span> <input type="text" class="row-3" placeholder="Linda Williams"> 
                     <div class="row">
                         <div class="col-4"><span>City :</span> <input placeholder=""> </div>
-                        <div class="col-4"><span>State :</span> <input id="cvv"> </div>
+                        <div class="col-4"><span>State :</span> <input placeholder=""> </div>
                     </div> 
                     <div class="col-4"><span>Zipcode :</span> <input placeholder=""> </div>
                     <span>Phone No.:</span> <input placeholder="">
@@ -49,34 +50,27 @@
         <div class="right border">
             <div class="header">Order Summary</div>
             <p>2 items</p>
-            <div class="row item">
-                <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/79M6pU0.png"></div>
+            <div class="row item" *ngFor="let c of cart">
+                <div class="col-4 align-self-center"><img class="img-fluid" src="{{c.product.productImagesrc}}"></div>
                 <div class="col-8">
-                    <div class="row"><b>$ 26.99</b></div>
-                    <div class="row text-muted">Be Legandary Lipstick-Nude rose</div>
-                    <div class="row">Qty:1</div>
+                    <div class="row"><b>${{c.product.productPrice}}</b></div>
+                    <div class="row text-muted">{{c.product.productName}}</div>
+                    <div class="row">{{c.cartproductQuantity}}</div>
                 </div>
             </div>
-            <div class="row item">
-                <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/Ew8NzKr.jpg"></div>
-                <div class="col-8">
-                    <div class="row"><b>$ 19.99</b></div>
-                    <div class="row text-muted">Be Legandary Lipstick-Sheer Navy Cream</div>
-                    <div class="row">Qty:1</div>
-                </div>
-            </div>
+            
             <hr>
             <div class="row lower">
                 <div class="col text-left">Subtotal</div>
-                <div class="col text-right">$ 46.98</div>
+                <div class="col text-right">$ Total</div>
             </div>
             <div class="row lower">
                 <div class="col text-left">Delivery</div>
-                <div class="col text-right">Free</div>
+                <div class="col text-right">$1</div>
             </div>
             <div class="row lower">
                 <div class="col text-left"><b>Total to pay</b></div>
-                <div class="col text-right"><b>$ 46.98</b></div>
+                <div class="col text-right"><b>$</b></div>
             </div>
             
             </div> <button class="btn">Place order</button>

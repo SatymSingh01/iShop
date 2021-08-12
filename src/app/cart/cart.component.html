@@ -1,5 +1,5 @@
 <ng-container *ngIf="cart.length !=0">
-    <div class="container">
+    <div class="container align-items-center">
         <div class="card-table">
             <div class="cart-product">
                 <table class="table table-responsive">
@@ -28,15 +28,14 @@
                         <td>
                             <button class="delete" (click)="removeItem(c.cartId)"><i class="fa fa-trash"></i></button>
                             
-                        </td>
-                   
-                        </tr>
-                        
+                        </td>                   
+                        </tr>                 
         
-                    </tbody>
+                </tbody>
                 </table>
             </div>
         </div>  
+        <button class="align-left" [routerLink]="['/order/',1]" a>Place Order</button>
     </div>  
     </ng-container>
     

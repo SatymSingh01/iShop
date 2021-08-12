@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Cart } from '../Models/cart';
+import { Customer } from '../Models/customer';
 import { Product } from '../Models/product';
 import { Retailer } from '../Models/retailer';
 import { CartService } from '../Services/cart.service';
+import { CustomerService } from '../Services/customer.service';
 import { ProductService } from '../Services/product.service';
 import { RetailerService } from '../Services/retailer.service';
 
@@ -17,9 +19,10 @@ export class ProductComponent implements OnInit {
 
   product!:Product;
   retailer!:Retailer;
-  cart!:any;
+  customer!:Customer;
+  cart!:  any;
   quantity:number = 1;
-  constructor(private cartservice:CartService,private productservice:ProductService,private retailerservice:RetailerService,private router:ActivatedRoute) { 
+  constructor(private customerservice:CustomerService,private cartservice:CartService,private productservice:ProductService,private retailerservice:RetailerService,private router:ActivatedRoute) { 
     
   }
 
@@ -34,8 +37,33 @@ export class ProductComponent implements OnInit {
 
   addtocart(productid:number)
   {      
+    this.customerservice.getById(1).subscribe(data=>{
+      this.customer=data
+    console.log(data)});
+
     this.cart = {productId:productid,cartproductQuantity:this.quantity,customerId:1}
-     this.cartservice.create(this.cart).subscribe();
+    console.log(this.cart);
+    if(this.customer.cart.length===0)
+    {
+      this.cartservice.create(this.cart).subscribe();
+    }
+    else{
+      this.customer.cart.forEach(element => {
+        if(productid===element.productId)
+        {        
+          this.quantity=element.cartproductQuantity+this.quantity;
+          this.cartservice.update(element.cartId,this.cart).subscribe();
+        }
+        else{
+          this.cartservice.create(this.cart).subscribe();
+          console.log(element.cartId,element.productId)
+        }
+        
+      });
+
+    }
+   
+     
   }
   plus(){this.quantity+=1}
   minus(){
