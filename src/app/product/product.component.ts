@@ -41,20 +41,24 @@ export class ProductComponent implements OnInit {
       this.customer=data
     console.log(data)});
 
-    this.cart = {productId:productid,cartproductQuantity:this.quantity,customerId:1}
+    
+    
     console.log(this.cart);
     if(this.customer.cart.length===0)
     {
+      this.cart = {productId:productid,cartproductQuantity:this.quantity,customerId:1}
       this.cartservice.create(this.cart).subscribe();
     }
     else{
       this.customer.cart.forEach(element => {
         if(productid===element.productId)
-        {        
-          this.quantity=element.cartproductQuantity+this.quantity;
+        { 
+          this.cart = {cartId:element.cartId,productId:productid,cartproductQuantity:element.cartproductQuantity+this.quantity,customerId:1}
+          
           this.cartservice.update(element.cartId,this.cart).subscribe();
         }
         else{
+          this.cart = {productId:productid,cartproductQuantity:this.quantity,customerId:1}
           this.cartservice.create(this.cart).subscribe();
           console.log(element.cartId,element.productId)
         }
