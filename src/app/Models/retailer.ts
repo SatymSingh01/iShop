@@ -1,3 +1,5 @@
+import { Admin } from "./admin";
+
 export class Retailer {
     retailerId !: number;
     retailerName!: string;
@@ -7,5 +9,6 @@ export class Retailer {
     userType!: string;
     verificationStatus ! : boolean;
     adminId ! :number;
+    admin!:Admin;
 
 }

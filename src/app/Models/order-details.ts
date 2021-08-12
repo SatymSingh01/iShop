@@ -1,3 +1,5 @@
+import { Customer } from "./customer";
+
 export class OrderDetails {
     orderId !: number; 
 	orderTotal !: number ; 
@@ -9,5 +11,6 @@ export class OrderDetails {
 	customerId !: number; 
 	orderDate!:Date ;
 	modeOfPayment !: string;
+	customer!:Customer
 
 }
