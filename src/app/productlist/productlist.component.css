@@ -16,21 +16,18 @@ h3.h3 {
     right: 25px;
     z-index: 1
 }
-
 .card .overlay li {
     margin: 0 0 10px;
     display: block;
     transform: translateX(100px);
     transition: all .5s
 }
-
 .card:hover .overlay li {
     transform: translateX(0)
 }
 .card:hover .overlay li:nth-child(2) {
     transition-delay: .15s
 }
-
 .card:hover .overlay li:nth-child(3) {
     transition-delay: .25s
 }
@@ -39,11 +36,7 @@ h3.h3 {
     color: #ffffff;
     background-color: rgb(255, 255, 255);
     font-size: 17px;
-    line-height: 45px;
-    text-align: center;
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
+	@@ -47,13 +47,13 @@ h3.h3 {
     display: block;
     transition: all .3s ease 0s
     
@@ -71,7 +64,6 @@ h3.h3 {
     left: 50%;
     top: -30px
 }
-
 .card .overlay li a:after {
     content: '';
     height: 15px;
@@ -81,12 +73,10 @@ h3.h3 {
     top: -22px;
     z-index: -1
 }
-
 .card .overlay li a:hover:after,
 .card .overlay li a:hover:before {
     opacity: 1
 }
-
 .card .wishlist {
     color: #fff;
     background-color: #404040;
@@ -100,20 +90,16 @@ h3.h3 {
     bottom: -100%;
     transition: all .3s
 }
-
 .card .wishlist:hover {
     background-color: #3498db;
     text-decoration: none
 }
-
 .card:hover .wishlist {
     bottom: 0
 }
-
 .demo {
     padding: 45px 0
 }
-
 .card-top{
     position: relative;
     display: flex;
@@ -125,16 +111,13 @@ h3.h3 {
     border: 1px solid rgba(0,0,0,0,2);
     border-radius: .25rem;
 }
-
 .item img{
     width: 64px;
 }
-
 .item {
  margin: 0px 15px;
  text-align: center;
 }
-
 /* .item a:hover{
     color: rgb(94, 99, 243);
 } */
@@ -142,22 +125,18 @@ h3.h3 {
     opacity: 10;
 } */
 .card{
-
     padding: 20px;
     margin: 10px;
     padding: 30px;
     margin: 35px;
     
 }
-
 .card img{
     width: 200px;
     height: 200px;
     margin-bottom: 10px;
     transition: 0.3s ease-in-out;
-
 }
-
 .card img:hover  {
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
@@ -171,16 +150,9 @@ h3.h3 {
     color: white;
     
 }
-
-
-
-
-
 /* .card:hover .product-image2 .pic-2 {
     opacity: 1
 } */
-
-
 .card .social {
     padding: 0;
     margin: 0;
@@ -217,7 +189,6 @@ h3.h3 {
     transform: translateX(100px);
     transition: all .5s
 }
-
 .card:hover .social li {
     transform: translateX(0)
 }
@@ -225,11 +196,9 @@ h3.h3 {
 .card:hover .social li:nth-child(2) {
     transition-delay: .15s
 }
-
 .card:hover .social li:nth-child(3) {
     transition-delay: .25s
 } */
-
 .card .social li a {
     color: #505050;
     background-color: #fff;
@@ -242,13 +211,11 @@ h3.h3 {
     display: block;
     transition: all .3s ease 0s
 }
-
 .card .social li a:hover {
     color: #fff;
     background-color: #3498db;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5)
 }
-
 .card .social li a:after,
 .card .social li a:before {
     content: attr(data-tip);
@@ -265,7 +232,6 @@ h3.h3 {
     left: 50%;
     top: -30px
 }
-
 .card .social li a:after {
     content: '';
     height: 15px;
@@ -275,7 +241,6 @@ h3.h3 {
     top: -22px;
     z-index: -1
 }
-
 .card .social li a:hover:after,
 .card .social li a:hover:before {
     opacity: 1

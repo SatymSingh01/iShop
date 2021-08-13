@@ -19,6 +19,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { CompareComponent } from './compare/compare.component';
 import { AddretailerComponent } from './addretailer/addretailer.component';
 import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
+import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
     WishlistComponent,
     CompareComponent,
     AddretailerComponent,
-    ADDPRODUCTComponent
+    ADDPRODUCTComponent,
+    CategoryproductComponent
     
      
   ],

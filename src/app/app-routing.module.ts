@@ -6,16 +6,22 @@ import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CompareComponent } from './compare/compare.component';
+import { RetailerComponent } from './retailer/retailer.component';
+import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
+import { OrderComponent } from './order/order.component';
 
 
 const routes: Routes = [
-  
-  {path:'productlist', component: ProductlistComponent},
-  {path:'', redirectTo:'productlist',pathMatch:'full'},
   {path:'product/:productid', component: ProductComponent},
+  {path:'productlist', component: ProductlistComponent},
+  {path:'', redirectTo:'productlist',pathMatch:'full'},  
   {path:'cart/:customerid', component: CartComponent},
-  {path:'wishlist', component:WishlistComponent},
-  {path:'compare', component:CompareComponent}
+  {path:'wishlist/:customerid', component:WishlistComponent},
+  {path:'compare/:customerid', component:CompareComponent},
+  {path:'retailer', component:RetailerComponent},
+  {path:'addproduct', component:ADDPRODUCTComponent},
+  {path:'order/:customerid', component:OrderComponent}
+
 ];
 
 

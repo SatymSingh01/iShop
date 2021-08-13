@@ -4,11 +4,18 @@
             <!-- Section: Sidebar -->
  <section>
     <section class="mb-4">
+<<<<<<< HEAD
   
         <!-- <h6 class="font-weight-bold mb-3">Sort</h6> -->
   
         <div class="form-check pl-0 mb-3">&nbsp;
           <h6 class="font-weight-bold mb-3">Sort</h6>
+=======
+
+        <h6 class="font-weight-bold mb-3">Sort</h6>
+
+        <div class="form-check pl-0 mb-3">
+>>>>>>> 9be43e98d7c406bd8bbc344c7a9448cec4a13944
           <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
           <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Higest to Lowest</label>
         </div>
@@ -19,14 +26,14 @@
   </section>
     <!-- Section: Filters -->
     <section>
-  
+
       <h5>Filters</h5>
-  
+
       <!-- Section: Condition -->
       <section class="mb-4">
-  
+
         <h6 class="font-weight-bold mb-3">Brands</h6>
-  
+
         <div class="form-check pl-0 mb-3">
           <input type="checkbox" class="form-check-input filled-in" id="new">
           <label class="form-check-label small text-uppercase card-link-secondary" for="new">Zara</label>
@@ -43,32 +50,32 @@
           <input type="checkbox" class="form-check-input filled-in" id="renewed">
           <label class="form-check-label small text-uppercase card-link-secondary" for="renewed">Malabar</label>
         </div>
-  
-     
+
+
  </section>
  <section class="mb-4">
-  
+
     <h6 class="font-weight-bold mb-3">Retailer</h6>
 
     <div class="form-check pl-0 mb-3" *ngFor = "let r of retailerlist">
       <input type="checkbox" class="form-check-input filled-in" id="new">
       <label class="form-check-label small text-uppercase card-link-secondary" for="new">{{r.retailerName}}</label>
     </div>
-    
 
- 
+
+
 </section>
       <!-- Section: Condition -->
-  
+
       <!-- Section: Average -->
-      
+
       <!-- Section: Average -->
-  
+
       <!-- Section: Price -->
       <section class="mb-4">
-  
+
         <h6 class="font-weight-bold mb-3">Price</h6>
-  
+
         <div class="form-check pl-0 mb-3">
           <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
           <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Under $25</label>
@@ -89,16 +96,22 @@
           <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
           <label class="form-check-label small text-uppercase card-link-secondary" for="200above">$200 & Above</label>
         </div>
-  
+
       </section>
     </section>
     <!-- Section: Filters -->
-  
+
   </section>
   <!-- Section: Sidebar -->
+<<<<<<< HEAD
             
       </div>
         <div class="col">
+=======
+
+        </div>
+        <div class="col-10">
+>>>>>>> 9be43e98d7c406bd8bbc344c7a9448cec4a13944
             <div class="row">
                 <div class="container1">
                     <div class="row">
@@ -106,7 +119,6 @@
                             <div class="card col-md-3">
                                 <div>
                                     <a><img src="{{product.productImagesrc}}" alt=""></a>
-                                    
                                     <ul class="social">
                                         <li><a [routerLink]="['/product/', product.productId]" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a  href="/wishlist" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
@@ -117,17 +129,15 @@
                                 <p class="m-1"><strong>Price </strong>${{product.productPrice}}</p>
                             </div>
                         </ng-container> 
-                        
+
                 </div>
         </div>
-                
+
             </div>
-            
+
 
         </div>
-        
+
     </div>
 </div>
 <hr>
-<!-- <router-outlet></router-outlet> -->
-
