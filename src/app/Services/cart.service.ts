@@ -32,8 +32,9 @@ export class CartService {
     return this.httpClient.get<Cart>(this.ApiUrl + '/carts/' + id)
     
   }   
-  delete(id?:number)
+  delete(id:number)
   {
+    console.log("delete service")
     return this.httpClient.delete<Cart>(this.ApiUrl+'/carts/'+id, this.httpOptions);
   }
     

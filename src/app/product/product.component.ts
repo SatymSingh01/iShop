@@ -30,20 +30,17 @@ export class ProductComponent implements OnInit {
     this.productservice.getById(this.router.snapshot.params['productid']).subscribe((data)=>{
       console.log(data)
       this.product=data});
-      
+      this.customerservice.getById(1).subscribe(data=>{
+        this.customer=data
+      console.log(data)});      
     
   
   }
 
   addtocart(productid:number)
-  {      
-    this.customerservice.getById(1).subscribe(data=>{
-      this.customer=data
-    console.log(data)});
-
+  {           
     
     
-    console.log(this.cart);
     if(this.customer.cart.length===0)
     {
       this.cart = {productId:productid,cartproductQuantity:this.quantity,customerId:1}
@@ -54,13 +51,14 @@ export class ProductComponent implements OnInit {
         if(productid===element.productId)
         { 
           this.cart = {cartId:element.cartId,productId:productid,cartproductQuantity:element.cartproductQuantity+this.quantity,customerId:1}
-          
           this.cartservice.update(element.cartId,this.cart).subscribe();
+          console.log(this.cart);
         }
         else{
           this.cart = {productId:productid,cartproductQuantity:this.quantity,customerId:1}
           this.cartservice.create(this.cart).subscribe();
-          console.log(element.cartId,element.productId)
+          this.ngOnInit();
+          console.log(this.cart);
         }
         
       });

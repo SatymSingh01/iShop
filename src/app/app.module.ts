@@ -20,6 +20,7 @@ import { CompareComponent } from './compare/compare.component';
 import { AddretailerComponent } from './addretailer/addretailer.component';
 import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { CategoryproductComponent } from './categoryproduct/categoryproduct.comp
     CompareComponent,
     AddretailerComponent,
     ADDPRODUCTComponent,
-    CategoryproductComponent
+    CategoryproductComponent,
+    LoginComponent
     
      
   ],
