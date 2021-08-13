@@ -4,7 +4,20 @@
     flex-wrap: wrap;
     align-items: center;
     padding: .5rem 1rem;
-    background-color: #1b9b70;
+    background-color: rgba(5, 71, 68, 1)
+}
+.form-control{
+    border: radius 3px; 
+    width: 485px;
+    margin-left: 20px;
+}
+.search-icon{
+    position:fixed;
+    right: 29%;
+    top: 30px;
+    cursor: pointer;
+    color: rgb(2, 2, 17);
+
 }
 .nav-link,.nav-item{
     color: aliceblue;
@@ -15,7 +28,7 @@
 }
 .btn{
     
-    background-color: #1b9b70;
+    background-color: rgba(5, 71, 68, 1);
 }
 
 .d-flex{
