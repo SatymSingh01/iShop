@@ -9,6 +9,8 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 export class LoginComponent implements OnInit {
   submitted = false;
   CustomerLogin!:FormGroup;
+  RetailerLogin !:FormGroup;
+
   userType:number=1;
  
   constructor(private formBuilder: FormBuilder) { }
@@ -33,15 +35,15 @@ export class LoginComponent implements OnInit {
     return this.CustomerLogin.controls;
   }
 
-  // onSubmit(): void {
-  //   this.submitted = true;
+  onSubmit(): void {
+    this.submitted = true;
 
-  //   if (this.ReactiveLogin.invalid) {
-  //     return;
-  //   }
+    if (this.RetailerLogin.invalid) {
+      return;
+    }
 
-  //   console.log(JSON.stringify(this.ReactiveLogin.value, null, 2));
-  // }
+    console.log(JSON.stringify(this.RetailerLogin.value, null, 2));
+  }
   }
 
 
