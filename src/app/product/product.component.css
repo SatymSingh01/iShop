@@ -36,7 +36,7 @@ body {
             flex-direction: column; } 
   
   
-  
+
   .product-title, .price {
     
     font-weight: bold; }
@@ -76,4 +76,7 @@ body {
   
   
   .tooltip-inner {
-    padding: 1.3em; }
+
+  padding: 1.3em; }
+
+
