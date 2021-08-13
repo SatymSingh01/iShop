@@ -9,6 +9,7 @@ import { Cart } from '../Models/cart';
 })
 export class CartService {
   private ApiUrl = "http://localhost:50002/api"
+ // carttemp:any={productId:2,cartId:1,cartproductQuantity:5,customerId:1};
 
   httpOptions = {
     headers:new HttpHeaders({
@@ -31,11 +32,21 @@ export class CartService {
     return this.httpClient.get<Cart>(this.ApiUrl + '/carts/' + id)
     
   }   
-  delete(id?:number)
+  delete(id:number)
   {
+    console.log("delete service")
     return this.httpClient.delete<Cart>(this.ApiUrl+'/carts/'+id, this.httpOptions);
   }
     
+  update(id:number, cart:Cart): Observable<Cart> {
+    
+      
+    
+    return this.httpClient.put<Cart>(this.ApiUrl + '/carts/' + id, JSON.stringify(cart), this.httpOptions)
+    // .pipe(
+    //   catchError(this.errorHandler))
+    
+  }
   // getProducts(){
   //   return this.productList.asObservable();
   // }

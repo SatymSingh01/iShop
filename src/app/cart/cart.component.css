@@ -1,5 +1,6 @@
 .container{
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 .card{
     height: 60vh;
@@ -55,4 +56,7 @@ h5,h6{
     font-weight: 400;
     padding: 12px 72px;
     border-radius: 3px !important;
+}
+.fa{
+    color: black;
 }

@@ -30,7 +30,9 @@ export class CartComponent implements OnInit {
 
   }
   removeItem(id: number){
+    console.log("delete");
      this.cartService.delete(id);
+     this.ngOnInit()
 
   }
 
