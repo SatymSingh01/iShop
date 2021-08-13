@@ -1,5 +1,5 @@
 .container {
-    margin-top: 75px
+    margin-top: 100px
 }
 
 h3.h3 {
@@ -36,7 +36,8 @@ h3.h3 {
     color: #ffffff;
     background-color: rgb(255, 255, 255);
     font-size: 17px;
-	@@ -47,13 +47,13 @@ h3.h3 {
+}
+h3 .h3 {
     display: block;
     transition: all .3s ease 0s
     

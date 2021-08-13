@@ -26,7 +26,7 @@
                     <p class="product-description">{{product.productDescription}}                                                                               </p>
                     <p class="price"><span>$ {{product.productPrice}}</span></p>
                     <p>Brand:- <span>{{product.productBrand}}</span></p>
-                    <p>Retailed by <span>{{retailer.retailerName}}</span></p>
+                    <p>Retailed by <span>{{product.retailer.retailerName}}</span></p>
                     <div class="row">
                         <div class="col-1">
                             <button class="btn btn-primary mp-0" (click)="minus()"  [disabled]="quantity==1"><i class="fa fa-minus"></i></button>&nbsp;
