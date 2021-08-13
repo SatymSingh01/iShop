@@ -8,14 +8,16 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 })
 export class LoginComponent implements OnInit {
   submitted = false;
-  ReactiveLogin!:FormGroup;
+  CustomerLogin!:FormGroup;
+  userType:number=1;
+ 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.ReactiveLogin = this.formBuilder.group(
+    this.CustomerLogin = this.formBuilder.group(
       {
-        email: ['', [Validators.required, Validators.email]],
-        password: [
+        customerEmail: ['', [Validators.required, Validators.email]],
+        customerPassword: [
           '',
           [
             Validators.required,
@@ -28,18 +30,18 @@ export class LoginComponent implements OnInit {
     
   }
   get f(): { [key: string]: AbstractControl } {
-    return this.ReactiveLogin.controls;
+    return this.CustomerLogin.controls;
   }
 
-  onSubmit(): void {
-    this.submitted = true;
+  // onSubmit(): void {
+  //   this.submitted = true;
 
-    if (this.ReactiveLogin.invalid) {
-      return;
-    }
+  //   if (this.ReactiveLogin.invalid) {
+  //     return;
+  //   }
 
-    console.log(JSON.stringify(this.ReactiveLogin.value, null, 2));
-  }
+  //   console.log(JSON.stringify(this.ReactiveLogin.value, null, 2));
+  // }
   }
 
 
