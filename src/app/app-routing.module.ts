@@ -9,9 +9,18 @@ import { CompareComponent } from './compare/compare.component';
 import { RetailerComponent } from './retailer/retailer.component';
 import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
 import { OrderComponent } from './order/order.component';
+import { RegisterComponent } from './register/register.component';
+
+
+
+
 
 
 const routes: Routes = [
+  
+  {path:'productlist', component: ProductlistComponent},
+  {path:'register', component: RegisterComponent},
+  {path:'', redirectTo:'productlist',pathMatch:'full'},
   {path:'product/:productid', component: ProductComponent},
   {path:'productlist', component: ProductlistComponent},
   {path:'', redirectTo:'productlist',pathMatch:'full'},  
