@@ -4,7 +4,7 @@
          <div class="card col-md-3">
                 <a><img src="{{product.productImagesrc}}" alt=""></a>
                 <ul class="social">
-                    <li><a routerLink="/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a [routerLink]="['/product/', product.productId]" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                     <li><a routerLink="/wishlist" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
                 </ul>
                    <h6 style="overflow:hidden;text-overflow: ellipsis; max-width:25ch;">{{product.productName}}</h6>

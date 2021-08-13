@@ -27,9 +27,7 @@
           </div> 
          
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/wishlist"><span class="fa fa-heart"></span></a>
-        </li>
+        
       </ul>
       
       <form class="d-flex">
@@ -37,13 +35,18 @@
         <button class="button btn nav-item" type="submit">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item" ><a class="nav-link" routerLink="signup" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/wishlist"><span class="fa fa-heart"></span></a>
+        </li>
+        <button routerLink = "cart" class="btn ">
+          <i style="font-size: 35px;" class="fas fa-cart-plus"></i>
+          <div style="font-size: 10px;" class="badge bg-danger">5 </div>
+      </button>
+        <!-- <li class="nav-item" ><a class="nav-link" routerLink="signup" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
         <li class="nav-item"><a class="nav-link" routerLink="login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
-      <button routerLink = "cart" class="btn ">
-        <i style="font-size: 35px;" class="fas fa-cart-plus"></i>
-        <div style="font-size: 10px;" class="badge bg-danger">5 </div>
-    </button>
+      
+    
     </div>
     
   </nav>
