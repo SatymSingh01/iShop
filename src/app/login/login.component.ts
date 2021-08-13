@@ -9,6 +9,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 export class LoginComponent implements OnInit {
   submitted = false;
   CustomerLogin!:FormGroup;
+  RetailerLogin !:FormGroup;
   userType:number=1;
  
   constructor(private formBuilder: FormBuilder) { }

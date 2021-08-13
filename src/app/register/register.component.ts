@@ -27,12 +27,13 @@ export class RegisterComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    //FOR CUSTOMER FORM
    this.CustomerRegister = this.formBuilder.group(
     {
-      name: ['',[Validators.required,Validators.minLength(5)]],
-      email: ['', [Validators.required, Validators.email]],
-      phone:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      password: [
+      customerName: ['',[Validators.required,Validators.minLength(3)]],
+      customerEmail: ['', [Validators.required, Validators.email]],
+      customerPhone:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      customerPassword: [
         '',
         [
           Validators.required,
@@ -47,9 +48,11 @@ export class RegisterComponent implements OnInit {
     }
   );
 
+
+//FOR RETAILER FORM
   this.RetailerRegister = this.formBuilder.group(
     {
-      retailerName : ['',[Validators.required,Validators.minLength(5)]],
+      retailerName : ['',[Validators.required,Validators.minLength(3)]],
       retailerEmail: ['', [Validators.required, Validators.email]],
       retailerPhone:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       retailerPassword: [
@@ -66,22 +69,35 @@ export class RegisterComponent implements OnInit {
       validators: [Validation.match('retailerPassword', 'confirmpassword')]
     }
   );
-  }
+   }
   
   get f(): { [key: string]: AbstractControl } {
+    return this. CustomerRegister.controls;
+    
+  }
+  get g(): { [key: string]: AbstractControl } {
     return this. RetailerRegister.controls;
   }
-
+  // //for customer
   // onSubmit(): void {
   //   this.submitted = true;
 
-  //   if (this.ReactiveRegister.invalid) {
+  //   if (this.CustomerRegister.invalid) {
   //     return;
   //   }
 
-  //   console.log(JSON.stringify(this.ReactiveRegister.value, null, 2));
+  //   console.log(JSON.stringify(this.CustomerRegister.value, null, 2));
   // }
+  // //For Retailer
+  // onCheck(): void {
+  //   this.submitted = true;
 
+  //   if (this.RetailerRegister.invalid) {
+  //     return;
+  //   }
+
+  //   console.log(JSON.stringify(this.RetailerRegister.value, null, 2));
+  // }
 
   onSubmit(){
 
@@ -104,7 +120,4 @@ export class RegisterComponent implements OnInit {
       console.log('Succesfully Registered !')});
   }
   
-  }
-}
-  
-  
+}}
