@@ -23,7 +23,7 @@ export class ADDPRODUCTComponent implements OnInit {
   ngOnInit(): void {
     this.addProduct=this.fb.group(
       {
-        addProduct:[],
+        
         productName:[],
         productImagesrc:[],
         productDescription:[],

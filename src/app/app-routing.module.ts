@@ -16,8 +16,8 @@ const routes: Routes = [
   {path:'productlist', component: ProductlistComponent},
   {path:'', redirectTo:'productlist',pathMatch:'full'},  
   {path:'cart/:customerid', component: CartComponent},
-  {path:'wishlist', component:WishlistComponent},
-  {path:'compare', component:CompareComponent},
+  {path:'wishlist/:customerid', component:WishlistComponent},
+  {path:'compare/:customerid', component:CompareComponent},
   {path:'retailer', component:RetailerComponent},
   {path:'addproduct', component:ADDPRODUCTComponent},
   {path:'order/:customerid', component:OrderComponent}
