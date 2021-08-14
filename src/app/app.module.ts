@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     RegisterComponent,
     LoginComponent,
     ChangepasswordComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    AdminComponent
     
      
   ],

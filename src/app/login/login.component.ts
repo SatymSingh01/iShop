@@ -28,11 +28,28 @@ export class LoginComponent implements OnInit {
        
       },
     );
-    
+    this.RetailerLogin = this.formBuilder.group(
+      {
+        retailerEmail: ['', [Validators.required, Validators.email]],
+        retailerPassword: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(6),
+          ]
+        ],
+       
+      },
+    );
   }
+
   get f(): { [key: string]: AbstractControl } {
     return this.CustomerLogin.controls;
   }
+  get g(): { [key: string]: AbstractControl } {
+    return this.RetailerLogin.controls;
+  }
+  
 
   onSubmit(): void {
     this.submitted = true;
