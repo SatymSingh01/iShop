@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,13 @@ export class LoginComponent implements OnInit {
   submitted = false;
   CustomerLogin!:FormGroup;
   RetailerLogin !:FormGroup;
-  userType:number=1;
+  userType!:string
  
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private router:ActivatedRoute,private rou:Router ) { }
+ // constructor(private service:ApiCallService,private router:ActivatedRoute,private rou:Router) { }
 
   ngOnInit(): void {
+    this.userType = this.router.snapshot.params['usertype']
     this.CustomerLogin = this.formBuilder.group(
       {
         customerEmail: ['', [Validators.required, Validators.email]],
