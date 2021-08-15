@@ -9,16 +9,16 @@
                 <img src='../../assets/Images/logo.jpeg' class="w-100; rounded; center" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem; width:100px;height:100px;" alt="Sample photo">
                 <!-- <h4 class="text-uppercase text-center mb-5">Sign UP</h4> -->
                 
-                <div *ngIf ="userType===0 ; else elseBlock">
+                <div *ngIf ="userType===1 ; else elseBlock">
                   <form [formGroup]="CustomerRegister" (ngSubmit)="onSubmit()" >
                     {{name1.className}}
                 
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="customerName">Your Name</label>
                       <input type="text" id="customerName" class="form-control form-control-sg" formControlName="customerName" #name1/>
-                      <div *ngIf="g.customerName.touched && g.customerName.invalid" class="alert alert-danger">
-                        <div *ngIf="g.customerName.errors?.minlength">Name should be Atleast 3 character</div> 
-                        <div *ngIf="g.customerName.errors?.required">Please Enter User Name</div>
+                      <div *ngIf="g.customerName?.touched && g.customerName.invalid" class="alert alert-danger">
+                        <div *ngIf="g.customerName?.errors?.minlength">Name should be Atleast 3 character</div> 
+                        <div *ngIf="g.customerName?.errors?.required">Please Enter User Name</div>
                         </div>
                     </div>
                     <div class=" form-outline mb-12 form-group col-xs-2">
