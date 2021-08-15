@@ -24,13 +24,13 @@ export class CartComponent implements OnInit {
     this.cart = res.cart;
   this.grandTotal = 0;})
 
-     
-  
-
 
   }
   removeItem(id: number){
-     this.cartService.delete(id);
+     this.cartService.delete(id)
+     .subscribe();
+     this.ngOnInit()
+     console.log(id)
 
   }
 
