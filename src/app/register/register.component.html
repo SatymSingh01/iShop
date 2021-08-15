@@ -11,20 +11,20 @@
                 
                 <div *ngIf ="userType===1 ; else elseBlock">
                   <form [formGroup]="CustomerRegister" (ngSubmit)="onSubmit()" >
-                    {{name1.className}}
+                    <!-- {{name1.className}} -->
                 
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="customerName">Your Name</label>
                       <input type="text" id="customerName" class="form-control form-control-sg" formControlName="customerName" #name1/>
-                      <div *ngIf="g.customerName?.touched && g.customerName.invalid" class="alert alert-danger">
-                        <div *ngIf="g.customerName?.errors?.minlength">Name should be Atleast 3 character</div> 
-                        <div *ngIf="g.customerName?.errors?.required">Please Enter User Name</div>
+                      <div *ngIf="g.customerName?.touched && g.customerName?.invalid" class="alert alert-danger">
+                        <div *ngIf="g.customerName.errors?.minlength">Name should be Atleast 3 character</div> 
+                        <div *ngIf="g.customerName.errors?.required">Please Enter User Name</div>
                         </div>
                     </div>
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="customerEmail">Email</label>
                       <input type="text" id="customerEmail" class="form-control form-control-sg" formControlName="customerEmail"/>
-                      <div *ngIf="g.customerEmail.touched && g.customerEmail.invalid" class="alert alert-danger">
+                      <div *ngIf="g.customerEmail?.touched && g.customerEmail?.invalid" class="alert alert-danger">
                         <div *ngIf="g.customerEmail.errors?.customerEmail">Please enter valid email</div>
                         <div *ngIf="g.customerEmail.errors?.required">Please enter email</div>
                         </div>
@@ -32,7 +32,7 @@
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="customerPhone">Phone Number</label>
                       <input type="text" id="customerPhone" class="form-control form-control-sg" formControlName="customerPhone"/>
-                      <div *ngIf="g.customerPhone.touched && g.customerPhone.invalid" class="alert alert-danger">
+                      <div *ngIf="g.customerPhone?.touched && g.customerPhone?.invalid" class="alert alert-danger">
                         <div *ngIf="g.customerPhone.errors?.pattern">Please Enter Valid Number</div>
                         <div *ngIf="g.customerPhone.errors?.required">Please Enter Phone Number</div>
                         </div>
@@ -40,7 +40,7 @@
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="customerPassword">Password</label>
                       <input type="text" id="customerPassword" class="form-control form-control-sg" formControlName="customerPassword"/>
-                      <div *ngIf="g.customerPassword.touched && g.customerPassword.invalid" class="alert alert-danger">
+                      <div *ngIf="g.customerPassword?.touched && g.customerPassword?.invalid" class="alert alert-danger">
                         <div *ngIf="g.customerPassword.errors?.minlength">Password should be atleast 6 character</div>
                         <div *ngIf="g.customerPassword.errors?.required">Please Enter Password</div>
                         </div>
@@ -48,16 +48,16 @@
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="confirmpassword">Confirm Password</label>
                       <input type="text" id="confirmpassword" class="form-control form-control-sg" formControlName="confirmpassword"/>
-                      <div *ngIf="g.confirmpassword.touched && g.confirmpassword.invalid" class="alert alert-danger">
+                      <div *ngIf="g.confirmpassword?.touched && g.confirmpassword?.invalid" class="alert alert-danger">
                         <div *ngIf="g.confirmpassword.errors?.matching">Confirm Password doesn't match</div>
                         </div>
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
-                      <button type="submit" [disabled]="!CustomerRegister.valid" class="btn btn-success btn-block btn-sg gradient-custom-4 text-body">Register</button>
+                      <button type="submit"  class="btn btn-success btn-block btn-sg gradient-custom-4 text-body">Register</button>
                       
                     </div>
-                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink = "/login" class="fw-bold text-body"><u>Login here</u></a></p>
                     </form>
                 </div>
                     <ng-template #elseBlock>
@@ -67,7 +67,7 @@
                        <div class=" form-outline mb-12 form-group col-xs-2">
                          <label class="form-label" for="retailerName">Your Name</label>
                          <input type="text" id="retailerName" class="form-control form-control-sg" formControlName="retailerName"/>
-                         <div *ngIf="g.retailerName.touched && g.retailerName.invalid" class="alert alert-danger">
+                         <div *ngIf="g.retailerName?.touched && g.retailerName?.invalid" class="alert alert-danger">
                            <div *ngIf="g.retailerName.errors?.minlength">Retailer Name should be Atleast 3 character</div> 
                            <div *ngIf="g.retailerName.errors?.required">Please Enter User Retailer Name</div>
                            </div>
@@ -76,7 +76,7 @@
                       <div class=" form-outline mb-12 form-group col-xs-2">
                         <label class="form-label" for="retailerEmail">Email</label>
                         <input type="text" id="retailerEmail" class="form-control form-control-sg" formControlName="retailerEmail"/>
-                        <div *ngIf="g.retailerEmail.touched && g.retailerEmail.invalid" class="alert alert-danger">
+                        <div *ngIf="g.retailerEmail?.touched && g.retailerEmail?.invalid" class="alert alert-danger">
                           <div *ngIf="g.retailerEmail.errors?.retailerEmail">Please enter valid email</div>
                           <div *ngIf="g.retailerEmail.errors?.required">Please enter Email ID </div>
                           </div>
@@ -84,7 +84,7 @@
                       <div class=" form-outline mb-12 form-group col-xs-2">
                         <label class="form-label" for="retailerPhone">Phone Number</label>
                         <input type="text" id="retailerPhone" class="form-control form-control-sg" formControlName="retailerPhone"/>
-                        <div *ngIf="g.retailerPhone.touched && g.retailerPhone.invalid" class="alert alert-danger">
+                        <div *ngIf="g.retailerPhone?.touched && g.retailerPhone?.invalid" class="alert alert-danger">
                           <div *ngIf="g.retailerPhone.errors?.pattern">Please Enter Valid Number</div>
                           <div *ngIf="g.retailerPhone.errors?.required">Please Enter Phone Number</div>
                           </div>
@@ -109,7 +109,7 @@
                         <button type="submit" [disabled]="!RetailerRegister.valid" class="btn btn-success btn-block btn-sg gradient-custom-4 text-body">Register</button>
                         
                       </div>
-                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p> -->
+                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink = "/login" class="fw-bold text-body"><u>Login here</u></a></p> -->
                        </form>
 
                     </ng-template>

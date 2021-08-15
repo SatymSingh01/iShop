@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Z_PARTIAL_FLUSH } from 'zlib';
 
-import { ProductlistComponent } from './productlist.component';
+import { CardviewComponent } from './cardview.component';
 
-describe('ProductlistComponent', () => {
-  let component: ProductlistComponent;
-  let fixture: ComponentFixture<ProductlistComponent>;
+describe('CardviewComponent', () => {
+  let component: CardviewComponent;
+  let fixture: ComponentFixture<CardviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductlistComponent ]
+      declarations: [ CardviewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductlistComponent);
+    fixture = TestBed.createComponent(CardviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 
 
 @Component({
@@ -9,6 +9,20 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'DemoProjectLTI';
-  constructor(private route:Router){}
+  // constructor(private route:Router){}
+  showHead: boolean = false;
+  constructor(private router: Router) {
+    // on route change to '/login', set the variable showHead to false
+      router.events.forEach((event) => {
+        if (event instanceof NavigationStart) {
+          if (event['url'] == '/register/:usertype') {
+            this.showHead = false;
+          } else {
+            // console.log("NU")
+            this.showHead = true;
+          }
+        }
+      });
+    }
   
 }

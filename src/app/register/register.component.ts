@@ -107,7 +107,8 @@ export class RegisterComponent implements OnInit {
     this.customerservice.create(this.CustomerRegister.value).subscribe(res => {
       console.log(res)
       console.log('Succesfully Registered !')
-      // this.router.navigateByUrl('/loginpage/')
+
+       this.router.navigateByUrl('/login')
     });
     }
 
