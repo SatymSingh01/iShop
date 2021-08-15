@@ -29,10 +29,12 @@
                             <button class="delete" (click)="removeItem(c.cartId)"><i class="fa fa-trash"></i></button>
                             
                         </td>                   
-                        </tr>                 
+                        </tr>  
+                                    
         
                 </tbody>
                 </table>
+                <p class="float-right">{{grandTotal}}</p>
             </div>
         </div>  
         <button class="align-left" [routerLink]="['/order/',1]" a>Place Order</button>

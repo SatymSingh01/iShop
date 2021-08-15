@@ -107,7 +107,7 @@
                                     <a><img src="{{product.productImagesrc}}" alt=""></a>
                                     <ul class="social">
                                         <li><a [routerLink]="['/product/', product.productId]" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a  href="/wishlist" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                        <li><a  (click)="wishlist(product.productId);" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
                                     </ul>
                                 </div>
                                 <p style="white-space: nowrap;overflow:hidden;text-overflow: ellipsis; max-width: 100ch;">{{product.productName}}</p> 

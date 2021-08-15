@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Customer } from '../Models/customer';
 import { Retailer } from '../Models/retailer';
@@ -29,10 +29,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
    this.CustomerRegister = this.formBuilder.group(
     {
-      name: ['',[Validators.required,Validators.minLength(5)]],
-      email: ['', [Validators.required, Validators.email]],
-      phone:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      password: [
+      customerName: ['',[Validators.required,Validators.minLength(5)]],
+      customerEmail: ['', [Validators.required, Validators.email]],
+      customerPhone:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      customerPassword: [
         '',
         [
           Validators.required,

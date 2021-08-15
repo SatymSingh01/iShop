@@ -22,7 +22,12 @@ export class CartComponent implements OnInit {
   this.customerService.getById(1)
   .subscribe(res=>{
     this.cart = res.cart;
-  this.grandTotal = 0;})
+
+    this.cart.forEach(element => {
+      this.grandTotal+=element.cartproductQuantity*element.product.productPrice;
+      
+    });
+   })
 
      
   
@@ -31,8 +36,9 @@ export class CartComponent implements OnInit {
   }
   removeItem(id: number){
     console.log("delete");
-     this.cartService.delete(id);
+     this.cartService.delete(id).subscribe();
      this.ngOnInit()
+     
 
   }
 
