@@ -14,7 +14,6 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
-
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CompareComponent } from './compare/compare.component';
 import { AddretailerComponent } from './addretailer/addretailer.component';
@@ -24,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     RegisterComponent,
     LoginComponent,
     ChangepasswordComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    AdminComponent
     
      
   ],

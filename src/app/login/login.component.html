@@ -14,17 +14,17 @@
                     <label class="form-label" for="customerEmail">Email</label>
                     <input type="text" id="customerEmail" class="form-control form-control-sg" formControlName="customerEmail"/>
                     <div *ngIf="f.customerEmail.touched && f.customerEmail.invalid" class="alert alert-danger">
-                      <div *ngIf="f.customerEmail.errors?.customerEmail">Please Enter valid Email</div>
+                      <div *ngIf="f.customerEmail.errors?.customerEmail">Please Enter valid  Customer Email</div>
                       <div *ngIf="f.customerEmail.errors?.required">Please Enter Email</div>
                       </div>
                   </div>
                   <!-- <div class="form-outline mb-4"> -->
-                  <div class=" form-outline mb-12 form-group col-xs-2">
-                    <label class="form-label" for=" customerPassword">Password</label>
-                    <input type="text" id=" customerPassword" class="form-control form-control-sg" formControlName=" customerPassword"/>
-                    <div *ngIf="f. customerPassword.touched && f. customerPassword.invalid" class="alert alert-danger">
-                      <div *ngIf="f. customerPassword.errors?.minlength">Password should be atleast 6 character</div>
-                      <div *ngIf="f. customerPassword.errors?.required">Please Enter Password</div>
+                  <div class="form-outline mb-12 form-group col-xs-2">
+                    <label class="form-label" for="customerPassword">Password</label>
+                    <input type="text" id="customerPassword" class="form-control form-control-sg" formControlName="customerPassword"/>
+                    <div *ngIf="f.customerPassword.touched && f.customerPassword.invalid" class="alert alert-danger">
+                      <div *ngIf="f.customerPassword.errors?.minlength">Password should be atleast 6 character</div>
+                      <div *ngIf="f.customerPassword.errors?.required">Please Enter Password</div>
                       </div>
                   </div>
   
@@ -45,18 +45,18 @@
                       <div class=" form-outline mb-12 form-group col-xs-2">
                         <label class="form-label" for="retailerEmail">Email</label>
                         <input type="text" id="retailerEmail" class="form-control form-control-sg" formControlName="retailerEmail"/>
-                        <div *ngIf="f.retailerEmail.touched && f.retailerEmail.invalid" class="alert alert-danger">
-                          <div *ngIf="f.retailerEmail.errors?.retailerEmail">Please enter valid Email</div>
-                          <div *ngIf="f.retailerEmail.errors?.required">Please enter Email</div>
+                        <div *ngIf="g.retailerEmail.touched && g.retailerEmail.invalid" class="alert alert-danger">
+                          <div *ngIf="g.retailerEmail.errors?.retailerEmail">Please enter valid Email</div>
+                          <div *ngIf="g.retailerEmail.errors?.required">Please enter Email</div>
                           </div>
                       </div>
                       <!-- <div class="form-outline mb-4"> -->
                       <div class=" form-outline mb-12 form-group col-xs-2">
                         <label class="form-label" for="retailerPassword">Password</label>
                         <input type="text" id="retailerPassword" class="form-control form-control-sg" formControlName="retailerPassword"/>
-                        <div *ngIf="f.retailerPassword.touched && f.retailerPassword.invalid" class="alert alert-danger">
-                          <div *ngIf="f.retailerPassword.errors?.minlength">Password should be atleast 6 character</div>
-                          <div *ngIf="f.retailerPassword.errors?.required">Please Enter Password</div>
+                        <div *ngIf="g.retailerPassword.touched && g.retailerPassword.invalid" class="alert alert-danger">
+                          <div *ngIf="g.retailerPassword.errors?.minlength">Password should be atleast 6 character</div>
+                          <div *ngIf="g.retailerPassword.errors?.required">Please Enter Retailer Password</div>
                           </div>
                       </div>
       

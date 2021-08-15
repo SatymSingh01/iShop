@@ -183,9 +183,8 @@ h3.h3 {
 
 
 
-.card .social li {
+/* .card .social li {
     margin: 0 0 10px;
-    height: auto;
     display: block;
     transform: translateX(100px);
     transition: all .5s
@@ -194,7 +193,7 @@ h3.h3 {
     transform: translateX(0)
 }
 
-/* .card:hover .social li:nth-child(2) {
+.card:hover .social li:nth-child(2) {
     transition-delay: .15s
 }
 .card:hover .social li:nth-child(3) {
