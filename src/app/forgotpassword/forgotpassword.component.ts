@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgotpassword.component.css']
 })
 export class ForgotpasswordComponent implements OnInit {
-
-  constructor() { }
+userType!: string
+  constructor(private router:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.userType = this.router.snapshot.params['usertype']
   }
 
 }
