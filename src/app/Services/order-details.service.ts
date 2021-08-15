@@ -7,8 +7,8 @@ import { OrderDetails } from '../Models/order-details';
   providedIn: 'root'
 })
 export class OrderDetailsService {
-  // private ApiUrl = "http://localhost:50002/api"
-  private ApiUrl = "http://localhost:35775/api"
+  private ApiUrl = "http://localhost:50002/api"
+  //private ApiUrl = "http://localhost:35775/api"
 
   httpOptions = {
     headers:new HttpHeaders({
