@@ -7,7 +7,8 @@ import { OrderItem } from '../Models/order-item';
   providedIn: 'root'
 })
 export class OrderItemService {
-  private ApiUrl = "http://localhost:50002/api"
+  // private ApiUrl = "http://localhost:50002/api"
+  private ApiUrl = "http://localhost:35775/api"
 
   httpOptions = {
     headers:new HttpHeaders({

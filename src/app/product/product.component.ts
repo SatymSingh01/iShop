@@ -30,7 +30,9 @@ export class ProductComponent implements OnInit {
     this.productservice.getById(this.router.snapshot.params['productid']).subscribe((data)=>{
       console.log(data)
       this.product=data});
-      
+      this.customerservice.getById(1).subscribe(data=>{
+        this.customer=data
+      console.log(data)});      
     
   
   }

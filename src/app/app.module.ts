@@ -14,12 +14,16 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
-// import { LikebuttonComponent } from './likebutton/likebutton.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CompareComponent } from './compare/compare.component';
 import { AddretailerComponent } from './addretailer/addretailer.component';
 import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -37,7 +41,13 @@ import { CategoryproductComponent } from './categoryproduct/categoryproduct.comp
     CompareComponent,
     AddretailerComponent,
     ADDPRODUCTComponent,
-    CategoryproductComponent
+    CategoryproductComponent,
+    LoginComponent,
+    RegisterComponent,
+    LoginComponent,
+    ChangepasswordComponent,
+    ForgotpasswordComponent,
+    AdminComponent
     
      
   ],

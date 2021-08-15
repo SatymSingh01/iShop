@@ -8,7 +8,8 @@ import { Cart } from '../Models/cart';
   providedIn: 'root'
 })
 export class CartService {
-  private ApiUrl = "http://localhost:50002/api"
+   private ApiUrl = "http://localhost:50002/api"
+  //private ApiUrl = "http://localhost:35775/api"
  // carttemp:any={productId:2,cartId:1,cartproductQuantity:5,customerId:1};
 
   httpOptions = {
@@ -32,8 +33,9 @@ export class CartService {
     return this.httpClient.get<Cart>(this.ApiUrl + '/carts/' + id)
     
   }   
-  delete(id?:number)
+  delete(id:number)
   {
+    console.log("delete service")
     return this.httpClient.delete<Cart>(this.ApiUrl+'/carts/'+id, this.httpOptions);
   }
     
