@@ -25,7 +25,7 @@
                     
                     <p class="product-description">{{product.productDescription}}                                                                               </p>
                     <p class="price"><span>$ {{product.productPrice}}</span></p>
-                    <p><span>{{product.productBrand}}</span></p>
+                    <p>Brand:- <span>{{product.productBrand}}</span></p>
                     <p>Retailed by <span>{{product.retailer.retailerName}}</span></p>
                     <div class="row">
                         <div class="col-1">
@@ -47,7 +47,7 @@
                                      
                     
                     <div class="action mt-4">
-                        <button class="add-to-cart rounded" routerLink="/compare"  type="button">Compare</button>&nbsp;
+                        <button class="add-to-cart rounded"(click)="addtocompare(product.productId)"  type="button">Compare</button>&nbsp;
                         <button (click)="addtocart(product.productId)" class="add-to-cart rounded"  type="button" >Add to Cart</button>
                                                   
                     </div>

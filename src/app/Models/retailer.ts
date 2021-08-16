@@ -7,7 +7,7 @@ export class Retailer {
     retailerEmail!: string;
     retailerPhone!: string;
     userType!: string;
-    verificationStatus ! : boolean;
+    verificationStatus ! : string;
     adminId ! :number;
     admin!:Admin;
 

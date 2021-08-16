@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Category } from '../Models/category';
 import { Product } from '../Models/product';
 import { ProductService } from '../Services/product.service';
 
@@ -10,15 +11,21 @@ import { ProductService } from '../Services/product.service';
 })
 export class ADDPRODUCTComponent implements OnInit {
   product!:Product;
+
   addProduct=new FormGroup({
     productName: new FormControl(''),
     productImagesrc: new FormControl(''),
     productDescription:new FormControl(''),
     productPrice: new FormControl(''),
-    productQuantity: new FormControl('')
+    productBrand:new FormControl(''),
+    productQuantity: new FormControl(''),
+    categoryId: new FormControl(''),
+    retailerId:new FormControl('')
   })
 
-  constructor(public fb:FormBuilder,private productservice:ProductService) { }
+  constructor(
+    public fb:FormBuilder,
+    private productservice:ProductService) { }
 
   ngOnInit(): void {
     this.addProduct=this.fb.group(
@@ -28,7 +35,10 @@ export class ADDPRODUCTComponent implements OnInit {
         productImagesrc:[],
         productDescription:[],
         productPrice: [],
-        productQuanitity:[],
+        productBrand:[],
+        productQuantity:[],
+        categoryId:['1'],
+        retailerId:['2']
       }
     )
   }

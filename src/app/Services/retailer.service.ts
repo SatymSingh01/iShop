@@ -7,7 +7,8 @@ import { Retailer } from '../Models/retailer';
   providedIn: 'root'
 })
 export class RetailerService {
-  private ApiUrl = "http://localhost:50002/api"
+  // private ApiUrl = "http://localhost:50002/api"
+  private ApiUrl = "http://localhost:35775/api"
 
   httpOptions = {
     headers:new HttpHeaders({
@@ -30,6 +31,7 @@ export class RetailerService {
     return this.httpClient.get<Retailer>(this.ApiUrl + '/retailers/' + id)    
   }   
   update(id:number, retailers:Retailer): Observable<Retailer> {
+    console.log('inside update ')
     return this.httpClient.put<Retailer>(this.ApiUrl + '/retailers/' + id, JSON.stringify(retailers), this.httpOptions)
     // .pipe(
     //   catchError(this.errorHandler))

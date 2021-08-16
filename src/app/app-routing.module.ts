@@ -9,9 +9,23 @@ import { CompareComponent } from './compare/compare.component';
 import { RetailerComponent } from './retailer/retailer.component';
 import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
 import { OrderComponent } from './order/order.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { CardviewComponent } from './cardview/cardview.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { AddretailerComponent } from './addretailer/addretailer.component';
+import { AdminComponent } from './admin/admin.component';
+
+
+
+
 
 
 const routes: Routes = [
+  
+  {path:'productlist', component: ProductlistComponent},
+  {path:'register/:usertype', component: RegisterComponent},
+  {path:'', redirectTo:'productlist',pathMatch:'full'},
   {path:'product/:productid', component: ProductComponent},
   {path:'productlist', component: ProductlistComponent},
   {path:'', redirectTo:'productlist',pathMatch:'full'},  
@@ -20,7 +34,12 @@ const routes: Routes = [
   {path:'compare/:customerid', component:CompareComponent},
   {path:'retailer', component:RetailerComponent},
   {path:'addproduct', component:ADDPRODUCTComponent},
-  {path:'order/:customerid', component:OrderComponent}
+  {path:'order/:customerid', component:OrderComponent},
+  {path:'login/:usertype', component: LoginComponent},
+  {path: 'cardview', component: CardviewComponent},
+  {path: 'forgotpassword/:usertype', component: ForgotpasswordComponent},
+  {path:'addretailer', component:AddretailerComponent},
+  {path:'admin', component:AdminComponent}
 
 ];
 
