@@ -1,8 +1,13 @@
 body {
     font-family: 'open sans';
-    overflow-x: hidden; 
-    margin: 20px;
+    overflow-x: hidden;     
+   
     color:#075E54
+}
+.container
+
+{
+  height: 590px;
 }
 
   
@@ -13,7 +18,8 @@ body {
   
   
   .card {
-    margin-top: 50px;
+    align-self: center;
+    margin-top: 100px;
     padding: 3em;
     line-height: 1.5em; }
   

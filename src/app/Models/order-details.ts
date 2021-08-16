@@ -1,4 +1,5 @@
 import { Customer } from "./customer";
+import { OrderItem } from "./order-item";
 
 export class OrderDetails {
     orderId !: number; 
@@ -12,5 +13,7 @@ export class OrderDetails {
 	orderDate!:Date ;
 	modeOfPayment !: string;
 	customer!:Customer
+	orderitem:OrderItem[]=[];
+
 
 }

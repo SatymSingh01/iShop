@@ -6,17 +6,35 @@ import { Compare } from '../Models/compare';
   providedIn: 'root'
 })
 export class CompareService {
-    comparelist !: Compare 
+    public static comparelist: Compare[]=[] 
+    static categoryId:number=0
+    compare!:Compare
 
   
 
   constructor() { }
   
-  Add(productid:number)
+  Add(productid:number,categoryid:number)
   {
-    
-    this.comparelist.productId.push(productid);
-    console.log(this.comparelist)
+    this.compare={productid};
+    if(CompareService.categoryId!=0  && CompareService.comparelist.length!==4){
+      if(categoryid===CompareService.categoryId)
+      {
+        console.log("push")
+        CompareService.comparelist.push(this.compare);
+      }      
+      else{
+        console.log("Different Category")
+        alert("Category is Different")
+      }
+    }
+    else{
+      CompareService.categoryId=categoryid
+      CompareService.comparelist.push(this.compare);
+    }   
+  }
+  get(){
+    return CompareService.comparelist
   }
 
 

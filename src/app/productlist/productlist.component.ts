@@ -21,17 +21,18 @@ export class ProductlistComponent implements OnInit {
   sort:any;
   wishlistl!:any;
   customerid!:string;
+  useractive!:boolean
   constructor(private wishlistservice:WishlistService,private customerservice:CustomerService,private productservice:ProductService,private retailerservice:RetailerService) { }
 
   ngOnInit(): void {
-    
+    this.useractive=localStorage.getItem('isLoggedIn')==="true"
     this.productservice.getAll().subscribe(data=>{
       console.log(data)
       this.productlist=data});
       this.retailerservice.getAll().subscribe(data=>{
         console.log(data)
         this.retailerlist=data});
-        if(localStorage.getItem('isLoggedIn')==="true")
+        if(this.useractive)
        {
               
         this.customerid = localStorage.getItem('currentUser')|| "";  
@@ -44,8 +45,10 @@ export class ProductlistComponent implements OnInit {
   }
 
   wishlist(productid:number)
-  {     
-    console.log('wishlist')
+  {    
+    if(this.useractive)
+    {
+      console.log('wishlist')
   if(this.customer.wishlist.length===0)
   {
     console.log('create')
@@ -65,21 +68,24 @@ export class ProductlistComponent implements OnInit {
           this.wishlistservice.create(this.wishlistl).subscribe();
         }
       });  
-       
-   
-     
+    }
+    else{
+      window.location.href="/cardview"
+    }
+    
+  }
+  sortf(){
+    console.log(this.sort);
+    if(this.sort==false)
+    {
+      this.productlist.sort((a, b) => (a.productPrice < b.productPrice ? -1 : 1));
+    }
+    else{
+      this.productlist.sort((a, b) => (a.productPrice > b.productPrice ? -1 : 1));
+    }
+    
+
   }
 
-      sortf(){
-        console.log(this.sort);
-        if(this.sort==false)
-        {
-          this.productlist.sort((a, b) => (a.productPrice < b.productPrice ? -1 : 1));
-        }
-        else{
-          this.productlist.sort((a, b) => (a.productPrice > b.productPrice ? -1 : 1));
-        }
-        
-
-      }
+    
 }

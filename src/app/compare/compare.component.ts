@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Compare } from '../Models/compare';
 import { Product } from '../Models/product';
+import { CompareService } from '../Services/compare.service';
 import { ProductService } from '../Services/product.service';
 
 @Component({
@@ -10,12 +12,17 @@ import { ProductService } from '../Services/product.service';
 export class CompareComponent implements OnInit {
 
   productlist:Product[]=[];
-  constructor(private productservice:ProductService) { }
+  compare!:Compare;
+  constructor(private compareservice:CompareService,private productservice:ProductService) { }
 
   ngOnInit(): void {
-    this.productservice.getAll().subscribe(data=>{
-      console.log(data)
-      this.productlist=data});
+    console.log(CompareService.comparelist)
+    
+    CompareService.comparelist.forEach(res=>{this.productservice.getById(res.productid).subscribe(p=>{this.productlist.push(p)})
+    console.log(this.productlist)}
+    )
+    
+    
   }
 
 }

@@ -80,11 +80,11 @@ body {
     margin-left: auto
 }
 
-form span {
+.form1 span {
     color: rgb(179, 179, 179)
 }
 
-form {
+.form1 {
     padding: 2vh 0
 }
 

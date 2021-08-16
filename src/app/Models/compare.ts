@@ -1,5 +1,8 @@
+import { Product } from "./product";
+
 export class Compare {
 
-    productId !: number[];
+    public productid!:number
+   
     
 }
