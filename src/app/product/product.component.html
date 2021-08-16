@@ -15,9 +15,9 @@
                       <img src="{{product.productImagesrc}}" class="product-image w-100"/>
                       </div>
                 </div>
-                <!-- <div class="col-md-1">
-                    <span class="like fa fa-heart ml-5 bootstrap-fill"></span> 
-                </div> -->
+                <div class="col-md-1">
+                    <span (click)="wishlist(product.productId)" class="like fa fa-heart ml-5 bootstrap-fill"></span> 
+                </div>
                                   
                 <div class="details col-md-7">
                     <h3 class="product-title">{{product.productName}}</h3>				
@@ -26,7 +26,7 @@
                     <p class="product-description">{{product.productDescription}}                                                                               </p>
                     <p class="price"><span>$ {{product.productPrice}}</span></p>
                     <p>Brand:- <span>{{product.productBrand}}</span></p>
-                    <p>Retailed by <span>{{retailer.retailerName}}</span></p>
+                    <p>Retailed by <span>{{product.retailer.retailerName}}</span></p>
                     <div class="row">
                         <div class="col-1">
                             <button class="btn btn-primary mp-0" (click)="minus()"  [disabled]="quantity==1"><i class="fa fa-minus"></i></button>&nbsp;

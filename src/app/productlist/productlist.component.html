@@ -7,14 +7,20 @@
 
         <h6 class="font-weight-bold mb-3">Sort</h6>
 
-        <div class="form-check pl-0 mb-3">
-          <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Higest to Lowest</label>
+        <div class="form-check">          
+          <label class="form-check-label small text-uppercase">
+            <input  type="radio" [value]=false checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
+            Price High to Low</label>
         </div>
-        <div class="form-check pl-0 mb-3">
-          <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="2550">Lowest to Highest</label>
+        <div class="form-check">          
+          <label class="form-check-label small text-uppercase">
+            <input type="radio" [value]=false checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
+            Price High to Low</label>
         </div>
+        <button (click)="sortf()">Apply Sort</button>
+      
+        
+        
   </section>
     <!-- Section: Filters -->
     <section>
@@ -105,8 +111,8 @@
                                 <div>
                                     <a><img src="{{product.productImagesrc}}" alt=""></a>
                                     <ul class="social">
-                                        <li><a [routerLink]="['/product/', product.productId]" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a  (click)="wishlist(product.productId);" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                        <li><a [routerLink]="['/product/', product.productId]" ><span class="fa fa-eye"></span></a></li>
+                                        <li><a href="#" (click)="wishlist(product.productId);" ><span class="fa fa-heart"></span></a></li>
                                     </ul>
                                 </div>
                                 <p style="white-space: nowrap;overflow:hidden;text-overflow: ellipsis; max-width: 100ch;">{{product.productName}}</p> 

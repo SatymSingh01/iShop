@@ -9,6 +9,7 @@ import { CartService } from '../Services/cart.service';
 import { CustomerService } from '../Services/customer.service';
 import { ProductService } from '../Services/product.service';
 import { RetailerService } from '../Services/retailer.service';
+import { WishlistService } from '../Services/wishlist.service';
 
 @Component({
   selector: 'app-product',
@@ -21,8 +22,9 @@ export class ProductComponent implements OnInit {
   retailer!:Retailer;
   customer!:Customer;
   cart!:  any;
+  wishlistl!:any;
   quantity:number = 1;
-  constructor(private customerservice:CustomerService,private cartservice:CartService,private productservice:ProductService,private retailerservice:RetailerService,private router:ActivatedRoute) { 
+  constructor(private wishlistservice:WishlistService,private customerservice:CustomerService,private cartservice:CartService,private productservice:ProductService,private retailerservice:RetailerService,private router:ActivatedRoute) { 
     
   }
 
@@ -64,6 +66,32 @@ export class ProductComponent implements OnInit {
       });
 
     }
+   
+     
+  }
+  wishlist(productid:number)
+  {     console.log('wishlist')
+  if(this.customer.wishlist.length===0)
+  {
+    console.log('create')
+    this.wishlistl = {productId:productid,customerId:1}
+    this.wishlistservice.create(this.wishlistl).subscribe();
+  }      
+    
+    
+         this.customer.wishlist.forEach(element => {
+        if(productid===element.productId)
+        { 
+          console.log('delete')
+          this.wishlistservice.delete(element.wishlistId).subscribe();
+        }
+        else{
+          console.log('create')
+          this.wishlistl = {productId:productid,customerId:1}
+          this.wishlistservice.create(this.wishlistl).subscribe();
+        }
+      });  
+       
    
      
   }

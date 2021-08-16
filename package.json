@@ -18,12 +18,11 @@
     "@angular/platform-browser": "~12.1.2",
     "@angular/platform-browser-dynamic": "~12.1.2",
     "@angular/router": "~12.1.2",
+    "@syncfusion/ej2-angular-dropdowns": "^19.2.55",
     "@types/jquery": "^3.5.6",
     "bootstrap": "^5.1.0",
     "bootstrap-icons": "^1.5.0",
-
     "font-awesome": "^4.7.0",
-
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

@@ -10,19 +10,23 @@ import { NavigationStart, Router } from '@angular/router';
 export class AppComponent {
   title = 'DemoProjectLTI';
   // constructor(private route:Router){}
-  showHead: boolean = false;
-  constructor(private router: Router) {
-    // on route change to '/login', set the variable showHead to false
-      router.events.forEach((event) => {
-        if (event instanceof NavigationStart) {
-          if (event['url'] == '/register/:usertype') {
-            this.showHead = false;
-          } else {
-            // console.log("NU")
-            this.showHead = true;
-          }
-        }
-      });
-    }
+  showHead: boolean = true;
+  constructor(public router: Router) {
+    if(this.router.url==='/login/1' || this.router.url=='/cardview' )
+  {
+    this.showHead=false
+
+  }
+   
+   
   
+}
+ngOnInit(){
+  if(this.router.url=='/login/1' )
+  {
+    this.showHead=false
+
+  }
+
+}
 }

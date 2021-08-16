@@ -48,7 +48,7 @@ h3.h3 {
     box-shadow: 0 0 10px rgba(0, 0, 0, .5)
 } */
 
-.card .overlay li a:after,
+/* .card .overlay li a:after,
 .card .overlay li a:before {
     content: attr(data-tip);
     color: #fff;
@@ -63,7 +63,7 @@ h3.h3 {
     position: absolute;
     left: 50%;
     top: -30px
-}
+} */
 .card .overlay li a:after {
     content: '';
     height: 15px;
@@ -75,6 +75,35 @@ h3.h3 {
 }
 .card .overlay li a:hover:after,
 .card .overlay li a:hover:before {
+    opacity: 1
+}
+/* .card .overlay li i:after,
+.card .overlay li i:before {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 3px;
+    padding: 5px 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -30px
+} */
+.card .overlay li i:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -22px;
+    z-index: -1
+}
+.card .overlay li i:hover:after,
+.card .overlay li i:hover:before {
     opacity: 1
 }
 .card .wishlist {
@@ -216,7 +245,7 @@ h3.h3 {
     background-color: #3498db;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5)
 }
-.card .social li a:after,
+/* .card .social li a:after,
 .card .social li a:before {
     content: attr(data-tip);
     color: #fff;
@@ -231,7 +260,7 @@ h3.h3 {
     position: absolute;
     left: 50%;
     top: -30px
-}
+} */
 .card .social li a:after {
     content: '';
     height: 15px;
@@ -243,5 +272,51 @@ h3.h3 {
 }
 .card .social li a:hover:after,
 .card .social li a:hover:before {
+    opacity: 1
+}
+.card .social li i {
+    color: #505050;
+    background-color: #fff;
+    font-size: 17px;
+    line-height: 45px;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: block;
+    transition: all .3s ease 0s
+}
+.card .social li i:hover {
+    color: #fff;
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5)
+}
+/* .card .social li i:after,
+.card .social li i:before {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 3px;
+    padding: 0 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -30px
+} */
+.card .social li i:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -22px;
+    z-index: -1
+}
+.card .social li i:hover:after,
+.card .social li i:hover:before {
     opacity: 1
 }

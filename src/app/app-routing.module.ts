@@ -15,6 +15,7 @@ import { CardviewComponent } from './cardview/cardview.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AddretailerComponent } from './addretailer/addretailer.component';
 import { AdminComponent } from './admin/admin.component';
+import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'cart/:customerid', component: CartComponent},
   {path:'wishlist/:customerid', component:WishlistComponent},
   {path:'compare/:customerid', component:CompareComponent},
+  {path:'category/:categoryid', component:CategoryproductComponent},
   {path:'retailer', component:RetailerComponent},
   {path:'addproduct', component:ADDPRODUCTComponent},
   {path:'order/:customerid', component:OrderComponent},
