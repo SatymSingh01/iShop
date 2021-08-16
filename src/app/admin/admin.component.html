@@ -10,6 +10,7 @@
     <th scope="col">Email</th>
     <th scope="col">Status</th>
     <th scope="col">To Verify</th>
+    <th scope="col">Delete</th>
   </tr>
 </thead>
 <tbody>
@@ -18,7 +19,8 @@
     <td>{{retailer.retailerName}}</td>
     <td>{{retailer.retailerEmail}}</td>
     <td><i class="fa fa-dot-circle-o text-danger"></i><span class="ms-1">{{retailer.verificationStatus}}</span></td>
-    <td><button type="button" class="btn btn-primary btn-sm">Approve</button></td>
+    <td><button type="button" (click)="approveEmail(retailer.retailerEmail,retailer)" class="btn btn-primary btn-sm">Approve</button></td>
+    <td></td>
   </tr>
   <!-- <tr>
     <th scope="row">2</th>

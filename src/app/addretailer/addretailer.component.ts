@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Retailer } from '../Models/retailer';
+import { RetailerService } from '../Services/retailer.service';
 
 @Component({
   selector: 'app-addretailer',
@@ -7,16 +9,42 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./addretailer.component.css']
 })
 export class AddretailerComponent implements OnInit {
-  retailer=new FormGroup({
-    retailerid: new FormControl('',Validators.required),
-    retailername: new FormControl('',Validators.required),
-    retaileremail:new FormControl('',Validators.required),
-    retailermobile: new FormControl('',Validators.required)
+  retailer!:Retailer;
+  addRetailer=new FormGroup({
+    retailerName: new FormControl('',Validators.required),
+    retailerEmail:new FormControl('',Validators.required),
+    retailerPhone: new FormControl('',Validators.required),
+    retailerPassword:new FormControl(''),
   })
+  
 
-  constructor() { }
+  constructor(
+    public fb:FormBuilder,
+    private retailerservice:RetailerService) { }
+
+
+
 
   ngOnInit(): void {
+    this.addRetailer=this.fb.group(
+      {
+        
+        retailerName:[],
+        retailerEmail:[],
+        retailerPhone:[],
+        retailerPassword:['Newret@123'] 
+      }
+    )
   }
+  addretailer()
+  {
+    this.retailer=this.addRetailer.value
+    console.log(this.retailer)
+    this.retailerservice.create(this.addRetailer.value).subscribe(res => {
+      console.log(res)
+      console.log('retailer added!')
+     
+    });
 
+}
 }
