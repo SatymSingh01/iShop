@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Retailer } from '../Models/retailer';
 import { RetailerService } from '../Services/retailer.service';
+import { SendEmailService } from '../Services/send-email.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +10,8 @@ import { RetailerService } from '../Services/retailer.service';
 })
 export class AdminComponent implements OnInit {
   retailers: Retailer[] = [];
-  constructor(private addretailer:RetailerService) { }
+  // retailer():any;
+  constructor(private addretailer:RetailerService, private sendemail: SendEmailService) { }
 
 
   ngOnInit(): void {
@@ -19,4 +21,11 @@ export class AdminComponent implements OnInit {
   })  
   }
 
+approveEmail(toEmail:string,retailerId:number){
+  // this.addretailer.update(retailerId,{verificationStatus:'true'})
+  this.sendemail.create(toEmail).subscribe();
+    console.log('Product created!')
+  
+
+}
 }

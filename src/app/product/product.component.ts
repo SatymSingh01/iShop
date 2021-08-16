@@ -6,6 +6,7 @@ import { Customer } from '../Models/customer';
 import { Product } from '../Models/product';
 import { Retailer } from '../Models/retailer';
 import { CartService } from '../Services/cart.service';
+import { CompareService } from '../Services/compare.service';
 import { CustomerService } from '../Services/customer.service';
 import { ProductService } from '../Services/product.service';
 import { RetailerService } from '../Services/retailer.service';
@@ -22,9 +23,14 @@ export class ProductComponent implements OnInit {
   customer!:Customer;
   cart!:  any;
   quantity:number = 1;
-  constructor(private customerservice:CustomerService,private cartservice:CartService,private productservice:ProductService,private retailerservice:RetailerService,private router:ActivatedRoute) { 
-    
-  }
+
+  constructor(
+    private customerservice:CustomerService,
+    private cartservice:CartService,
+    private productservice:ProductService,
+    private retailerservice:RetailerService,
+    private compareservice :CompareService,
+    private router:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.productservice.getById(this.router.snapshot.params['productid']).subscribe((data)=>{
@@ -76,6 +82,11 @@ export class ProductComponent implements OnInit {
     if(this.quantity>0)
     {
       this.quantity-=1}
+    }
+
+    addtocompare(productid:number)
+    {
+      this.compareservice.Add(productid);
     }
 
 }
