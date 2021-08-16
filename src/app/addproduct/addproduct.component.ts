@@ -37,8 +37,8 @@ export class ADDPRODUCTComponent implements OnInit {
         productPrice: [],
         productBrand:[],
         productQuantity:[],
-        categoryId:['1'],
-        retailerId:['2']
+        categoryId:[],
+        retailerId:[]
       }
     )
   }
@@ -48,8 +48,7 @@ export class ADDPRODUCTComponent implements OnInit {
     this.product=this.addProduct.value
     console.log(this.product)
     this.productservice.create(this.addProduct.value).subscribe(res => {
-      console.log(res)
-      console.log('Product created!')
+      window.location.href = "/retailer";
      
     });
 

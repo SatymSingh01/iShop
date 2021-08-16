@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'DemoProjectLTI';
   // constructor(private route:Router){}
   showHead: boolean = true;
-  hideroute:string[]=['/login/1','/login/0','/cardview','/register/1','/register/0','/forgotpassword/0','/admin']
+  hideroute:string[]=['/login/1','/login/0','/cardview','/register/1','/register/0','/forgotpassword/0','/admin','/addretailer','/retailer','/addproduct']
   constructor(private location: Location,private router :Router) {
    
    

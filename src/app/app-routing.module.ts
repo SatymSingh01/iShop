@@ -31,7 +31,6 @@ const routes: Routes = [
   {path:'product/:productid', component: ProductComponent},
   {path:'productlist', component: ProductlistComponent},
   {path:'', redirectTo:'productlist',pathMatch:'full'},  
-  {path:'cart/:customerid', component: CartComponent},
   {path:'wishlist/:customerid', component:WishlistComponent},
   {path:'compare/:customerid', component:CompareComponent},
   {path:'category/:categoryid', component:CategoryproductComponent},
@@ -51,7 +50,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

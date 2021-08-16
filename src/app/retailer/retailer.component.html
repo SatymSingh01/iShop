@@ -1,11 +1,11 @@
 
 
-<!------ Include the above in your HEAD tag ---------->
 
-<div class="container emp-profile">
+<section style="background-color: rgb(205, 255, 238);">
+<div class="container emp-profile" style="background-color: rgb(205, 255, 238);">
     <form method="post">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" >
                 <div class="profile-head">
                     <div class="row">
                         <div class="col-md-9">
@@ -17,6 +17,7 @@
                         <div class = "col-md-3">
                             
                                 <button type="submit" class="profile-edit-btn m-2" name="btnAddMore" value="Add Product" routerLink="/addproduct">Add Product</button>
+                                <button (click) = "logout()" type="submit" class="profile-edit-btn m-2" name="btnAddMore" value="Add Product" >Logout</button>
                                 <!-- <input type="submit" class="profile-edit-btn m-2" name="btnAddMore" value="Change Password"/> -->
                         </div>
                     </div>
@@ -29,9 +30,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" id="home-tab" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">About</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" id="profile-tab" data-toggle="tab"  role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                                 
@@ -72,12 +73,7 @@
                                                             </div>
                                                         </div>
                                             </div>
-                                            <div class="tab-pane fade" id="tab" role="tabpanel" aria-labelledby="profile-tab">                                                      
-                                                       
-                                                       
-                                                        
-                                                
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     
@@ -92,4 +88,5 @@
         
     </form>           
 </div>
+</section>
 

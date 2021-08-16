@@ -32,7 +32,7 @@ export class ProductlistComponent implements OnInit {
         console.log(data)
         this.retailerlist=data});
         if(localStorage.getItem('isLoggedIn')==="true")
-      {
+       {
               
         this.customerid = localStorage.getItem('currentUser')|| "";  
         console.log(" id:"+this.customerid)    

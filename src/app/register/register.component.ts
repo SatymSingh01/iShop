@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { Customer } from '../Models/customer';
 import { Retailer } from '../Models/retailer';
@@ -22,17 +22,19 @@ export class RegisterComponent implements OnInit {
   CustomerRegister !:FormGroup;
   customer !: Customer; //1
   retailer !: Retailer;
-  userType : string = '1';
+  userType !: string ;
   
   constructor(
     private customerservice:CustomerService,
     private retailerservice: RetailerService,
     private formBuilder: FormBuilder,
     
-    private router: Router) { }
+    private router: Router,
+    private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     //FOR CUSTOMER FORM
+    this.userType = this.route.snapshot.params['usertype']
    this.CustomerRegister = this.formBuilder.group(
     {
       customerName: ['',[Validators.required,Validators.minLength(3)]],
@@ -143,7 +145,7 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
 
       // stop here if form is invalid
-      if (this.CustomerRegister.invalid) {
+      if (this.RetailerRegister.invalid) {
           return;
       }
 

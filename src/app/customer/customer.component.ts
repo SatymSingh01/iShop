@@ -25,7 +25,10 @@ logout() {
   // remove user from local storage to log user out
   localStorage.removeItem('currentUser');
   localStorage.setItem('isLoggedIn',"false")
-  this.rou.navigate(['/productlist'])
+  
+  this.ngOnInit();
+  window.location.href = "/productlist";
+  //this.rou.navigate(['/productlist'])
 }
 
 }

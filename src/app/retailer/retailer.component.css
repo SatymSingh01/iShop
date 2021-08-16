@@ -1,7 +1,5 @@
-.container{
-    margin-top: 100px;
-    height:495px;
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+.container{    
+    background: -webkit-linear-gradient(left, #ccffdb, #a0ffc8);
 }
 .emp-profile{
     padding: 3%;
@@ -49,5 +47,5 @@
 }
 .profile-tab p{
     font-weight: 600;
-    color: #959292;
+    color: #000000;
 }

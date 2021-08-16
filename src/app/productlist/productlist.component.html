@@ -17,7 +17,8 @@
             <input type="radio" [value]=false checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
             Price Low to High</label>
         </div>
-        <button (click)="sortf()">Apply Sort</button>
+        
+        <button (click)="sortf()" type="submit" class="profile-edit-btn m-2" name="Logout" value="Sort">Sort</button>
       
         
         
@@ -117,7 +118,7 @@
                                 </div>
                                 <p style="white-space: nowrap;overflow:hidden;text-overflow: ellipsis; max-width: 100ch;">{{product.productName}}</p> 
                                 <p class="m-1"><strong>Brand</strong>{{product.productBrand}}</p>
-                                <p class="m-1"><strong>Price </strong>${{product.productPrice}}</p>
+                                <p class="m-1"><strong>Price </strong>{{product.productPrice | currency:'INR':'symbol-narrow'}}</p>
                             </div>
                         </ng-container> 
 
