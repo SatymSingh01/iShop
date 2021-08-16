@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
     if (this.CustomerLogin.invalid) {
       return;
     }
+    
 
      console.log(JSON.stringify(this.CustomerLogin.value, null, 2));
   }
