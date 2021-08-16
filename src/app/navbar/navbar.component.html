@@ -12,7 +12,7 @@
           <a class="nav-link" routerLink="/productlist">Products<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/compare">Compare</a>
+          <a class="nav-link" [routerLink]="useractive?'/compare/':'/cardview'">Compare</a>
         </li>
         <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -36,10 +36,10 @@
       </form>
       <ul class="nav navbar-nav navbar">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/wishlist/', 1]"><span class="fa fa-heart"></span></a>
+          <a class="nav-link" [routerLink]="useractive?['/wishlist/', customerid]:'/cardview'"><span class="fa fa-heart"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/cart/', 1]"><span class="fa fa-shopping-cart "></span></a>
+          <a class="nav-link" [routerLink]="useractive?['/cart/', customerid]:'/cardview'"><span class="fa fa-shopping-cart "></span></a>
         </li>
         <!-- <button routerLink = "cart" class="btn ">
           <i style="font-size: 35px;" class="fa fa-shopping-cart fa-xs " aria-hidden="true"></i>

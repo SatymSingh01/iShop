@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SendEmailService {
-  private ApiUrl = "http://localhost:35775/api"
+  private ApiUrl = "http://localhost:50002/api"
+  //private ApiUrl = "http://localhost:35775/api"
   // carttemp:any={productId:2,cartId:1,cartproductQuantity:5,customerId:1};
  
    httpOptions = {
@@ -19,7 +20,7 @@ export class SendEmailService {
 
   create(toEmail:string){
     console.log('create email')
-    return this.httpClient.post(this.ApiUrl + '/Email/', {toEmail}, this.httpOptions) 
+    return this.httpClient.post(this.ApiUrl + '/Email/', JSON.stringify(toEmail), this.httpOptions) 
 
   }
 }

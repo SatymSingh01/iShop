@@ -1,5 +1,6 @@
 .container{
     margin-top: 100px;
+    height:495px;
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
 .emp-profile{

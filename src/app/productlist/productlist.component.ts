@@ -20,6 +20,7 @@ export class ProductlistComponent implements OnInit {
   customer!:Customer;
   sort:any;
   wishlistl!:any;
+  customerid!:string;
   constructor(private wishlistservice:WishlistService,private customerservice:CustomerService,private productservice:ProductService,private retailerservice:RetailerService) { }
 
   ngOnInit(): void {
@@ -30,20 +31,27 @@ export class ProductlistComponent implements OnInit {
       this.retailerservice.getAll().subscribe(data=>{
         console.log(data)
         this.retailerlist=data});
-        this.customerservice.getById(1).subscribe(data=>{
+        if(localStorage.getItem('isLoggedIn')==="true")
+      {
+              
+        this.customerid = localStorage.getItem('currentUser')|| "";  
+        console.log(" id:"+this.customerid)    
+        this.customerservice.getById(+this.customerid).subscribe(data=>{
           this.customer=data
-        console.log(data)}); 
+        console.log(data)});  
+      }
+        
   }
 
   wishlist(productid:number)
-  {     console.log('wishlist')
+  {     
+    console.log('wishlist')
   if(this.customer.wishlist.length===0)
   {
     console.log('create')
-    this.wishlistl = {productId:productid,customerId:1}
+    this.wishlistl = {productId:productid,customerId:+this.customerid}
     this.wishlistservice.create(this.wishlistl).subscribe();
-  }      
-    
+  }        
     
          this.customer.wishlist.forEach(element => {
         if(productid===element.productId)
@@ -53,11 +61,14 @@ export class ProductlistComponent implements OnInit {
         }
         else{
           console.log('create')
-          this.wishlistl = {productId:productid,customerId:1}
+          this.wishlistl = {productId:productid,customerId:+this.customerid}
           this.wishlistservice.create(this.wishlistl).subscribe();
         }
       });  
-    }
+       
+   
+     
+  }
 
       sortf(){
         console.log(this.sort);

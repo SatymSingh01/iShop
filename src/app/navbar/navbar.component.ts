@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   category:Category[]=[];
   showProfile:boolean=false;
   customerid!:string;
+  useractive!:boolean;
   
   constructor(private categoryservice:CategoryService) { }
 
@@ -21,6 +22,7 @@ export class NavbarComponent implements OnInit {
     this.categoryservice.getAll().subscribe(data=>{
       console.log(data)
       this.category=data});
+      this.useractive = localStorage.getItem('isLoggedIn')==='true'
       if(localStorage.getItem('isLoggedIn')==="true")
       {
         this.showProfile = true;        
