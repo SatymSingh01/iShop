@@ -8,8 +8,8 @@ import { Cart } from '../Models/cart';
   providedIn: 'root'
 })
 export class CartService {
-   private ApiUrl = "http://localhost:50002/api"
-  //private ApiUrl = "http://localhost:35775/api"
+  // private ApiUrl = "http://localhost:50002/api"
+  private ApiUrl = "http://localhost:35775/api"
  // carttemp:any={productId:2,cartId:1,cartproductQuantity:5,customerId:1};
 
   httpOptions = {

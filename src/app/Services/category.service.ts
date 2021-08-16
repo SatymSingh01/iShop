@@ -7,8 +7,8 @@ import { Category } from '../Models/category';
   providedIn: 'root'
 })
 export class CategoryService {
-  private ApiUrl = "http://localhost:50002/api"
-  //private ApiUrl = "http://localhost:35775/api"
+  // private ApiUrl = "http://localhost:50002/api"
+  private ApiUrl = "http://localhost:35775/api"
 
   httpOptions = {
     headers:new HttpHeaders({
