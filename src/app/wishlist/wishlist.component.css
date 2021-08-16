@@ -1,0 +1,283 @@
+.container {
+    margin-top: 75px;
+    height:612px
+}
+
+h3.h3 {
+    text-align: center;
+    margin: 1em;
+    text-transform: capitalize;
+    font-size: 1.7em
+}
+.card .overlay {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 50px;
+    right: 25px;
+    z-index: 1
+}
+
+.card .overlay li {
+    margin: 0 0 10px;
+    display: block;
+    transform: translateX(100px);
+    transition: all .5s
+}
+
+.card:hover .overlay li {
+    transform: translateX(0)
+}
+.card:hover .overlay li:nth-child(2) {
+    transition-delay: .15s
+}
+
+.card:hover .overlay li:nth-child(3) {
+    transition-delay: .25s
+}
+
+.card .overlay li a {
+    color: #ffffff;
+    background-color: rgb(255, 255, 255);
+    font-size: 17px;
+    line-height: 45px;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: block;
+    transition: all .3s ease 0s
+    
+}
+
+.card .overlay li a:hover {
+    color: #fff;
+    background-color: rgb(0, 80, 80);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5)
+}
+
+.card .overlay li a:after,
+.card .overlay li a:before {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 3px;
+    padding: 5px 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -30px
+}
+
+.card .overlay li a:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -22px;
+    z-index: -1
+}
+
+.card .overlay li a:hover:after,
+.card .overlay li a:hover:before {
+    opacity: 1
+}
+
+.card .wishlist {
+    color: #fff;
+    background-color: #404040;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    transition: all .3s
+}
+
+.card .wishlist:hover {
+    background-color: #3498db;
+    text-decoration: none
+}
+
+.card:hover .wishlist {
+    bottom: 0
+}
+
+.demo {
+    padding: 45px 0
+}
+
+.card-top{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0,2);
+    border-radius: .25rem;
+}
+
+.item img{
+    width: 64px;
+}
+
+.item {
+ margin: 0px 15px;
+ text-align: center;
+}
+
+/* .item a:hover{
+    color: rgb(94, 99, 243);
+} */
+/* .card:hover .overlay{
+    opacity: 10;
+} */
+.card{
+
+    padding: 20px;
+    margin: 10px;
+    padding: 30px;
+    margin: 35px;
+    
+}
+
+.card img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    transition: 0.3s ease-in-out;
+
+}
+
+.card img:hover  {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    
+}
+.card img:hover + .social li{
+    transform: translateX(0);
+    opacity: 1;
+}
+.fa{
+    color: white;
+    
+}
+
+
+
+
+
+/* .card:hover .product-image2 .pic-2 {
+    opacity: 1
+} */
+
+
+.card .social {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 50px;
+    right: 25px;
+    z-index: 1
+}
+.social li{
+    list-style-type: none;
+      
+}
+/* .social li:hover{
+    display: inline;
+} */
+.card :hover .social li {
+   display:  inline-block !important;
+}
+.card .social li {
+    opacity: 0; 
+    padding-left: 30px;
+    
+ }
+ .card .social li:hover {
+    opacity: 1; 
+    padding-left: 30px;
+ }
+
+
+
+/* .card .social li {
+    margin: 0 0 10px;
+    display: block;
+    transform: translateX(100px);
+    transition: all .5s
+}
+
+.card:hover .social li {
+    transform: translateX(0)
+}
+
+.card:hover .social li:nth-child(2) {
+    transition-delay: .15s
+}
+
+.card:hover .social li:nth-child(3) {
+    transition-delay: .25s
+} */
+
+.card .social li a {
+    color: #505050;
+    background-color: #fff;
+    font-size: 17px;
+    line-height: 45px;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: block;
+    transition: all .3s ease 0s
+}
+
+.card .social li a:hover {
+    color: #fff;
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5)
+}
+
+.card .social li a:after,
+.card .social li a:before {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 3px;
+    padding: 0 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -30px
+}
+
+.card .social li a:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -22px;
+    z-index: -1
+}
+
+.card .social li a:hover:after,
+.card .social li a:hover:before {
+    opacity: 1
+}

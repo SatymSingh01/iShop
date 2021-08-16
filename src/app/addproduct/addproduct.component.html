@@ -1,0 +1,55 @@
+<div class ="container container-fluid col-md-9 align-items-center">
+    <h1 style="text-align: center;" >Product Details</h1>
+   
+    <form [formGroup]="addProduct" (ngSubmit)="addproduct()" >
+        <div class="parameter"> 
+        <div class="form-Group ">
+            
+            <label>Product Name</label> 
+            <input formControlName="productName" id="productName" type="text" class="form-control">
+     
+        </div>
+
+        <div class="form-Group">
+            <label>Product Image Source</label>
+            <input formControlName="productImagesrc" id="productImagesrc" type="url" class="form-control">
+        </div>
+        
+
+        <div class="form-Group">
+            <label>Product Description</label>
+            <input formControlName="productDescription" id="productDescription" type="text" class="form-control">
+        </div>
+
+        <div class="form-Group">
+            <label>Product Price</label>
+            <input formControlName="productPrice" type="number" id="productPrice" class="form-control">
+        </div>
+        <div class="form-Group">
+            <label for="productBrand">Choose Product Brand</label>
+            <select class="form-control " formControlName="productBrand" >
+                <option value="Pantaloons">Pantaloons</option>
+                <option value="Westside">Westside</option>
+                <option value="Zara">Zara</option>
+                <option value="Tanishq">Tanishq</option>
+                <option value="Malabar">Malabar</option>
+                <option value="Sony">Sony</option>
+                <option value="Samsung">Samsung</option>
+              </select>
+            
+            </div>
+        <div class="form-Group">
+            <label>Product Quantity</label>
+            <input formControlName="productQuantity" type="number" id="productQuantity" class="form-control">
+        </div>
+        <br>
+        <div class="align-items-center center">
+            <!-- [disabled]="addProduct.invalid" -->
+            <button class ="button btn"  type="submit"  >Submit</button>
+        </div>
+        
+      
+      </div>
+    </form>
+ 
+ </div>

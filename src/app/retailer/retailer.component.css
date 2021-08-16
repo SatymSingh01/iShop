@@ -1,0 +1,51 @@
+.container{    
+    background: -webkit-linear-gradient(left, #ccffdb, #a0ffc8);
+}
+.emp-profile{
+    padding: 3%;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+
+
+.profile-head h5{
+    color: rgb(2, 34, 34);
+}
+
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: white;
+    background-color: #023331;
+    cursor: pointer;
+}
+
+
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+    color: #023331;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    color: #023331;
+    border-bottom:2px solid #aca9a9;
+}
+
+.profile-tab label{
+    font-weight: 600;
+    color: #023331;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #000000;
+}
