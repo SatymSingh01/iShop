@@ -61,6 +61,14 @@ export class ProductlistComponent implements OnInit {
 
       sortf(){
         console.log(this.sort);
+        if(this.sort==false)
+        {
+          this.productlist.sort((a, b) => (a.productPrice < b.productPrice ? -1 : 1));
+        }
+        else{
+          this.productlist.sort((a, b) => (a.productPrice > b.productPrice ? -1 : 1));
+        }
+        
 
       }
 }

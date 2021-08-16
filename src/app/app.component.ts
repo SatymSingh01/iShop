@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { NavigationStart, ResolveEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -11,22 +12,29 @@ export class AppComponent {
   title = 'DemoProjectLTI';
   // constructor(private route:Router){}
   showHead: boolean = true;
-  constructor(public router: Router) {
-    if(this.router.url==='/login/1' || this.router.url=='/cardview' )
-  {
-    this.showHead=false
-
-  }
+  hideroute:string[]=['/login/1','/login/0','/cardview','/register/1','/register/0','/forgotpassword/0','/admin']
+  constructor(private location: Location,private router :Router) {
+   
    
    
   
 }
 ngOnInit(){
-  if(this.router.url=='/login/1' )
-  {
-    this.showHead=false
-
-  }
+  console.log(this.location.path())
+  this.router.events.forEach((event) => {
+    if (event instanceof NavigationStart) {
+      
+        if (this.hideroute.includes(event['url'])) {
+          this.showHead = false;
+        } else {
+          
+          this.showHead = true;
+        }
+        
+      
+      
+    }
+  });
 
 }
 }

@@ -9,13 +9,13 @@
 
         <div class="form-check">          
           <label class="form-check-label small text-uppercase">
-            <input  type="radio" [value]=false checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
+            <input  type="radio" [value]=true checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
             Price High to Low</label>
         </div>
         <div class="form-check">          
           <label class="form-check-label small text-uppercase">
             <input type="radio" [value]=false checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
-            Price High to Low</label>
+            Price Low to High</label>
         </div>
         <button (click)="sortf()">Apply Sort</button>
       
@@ -33,7 +33,7 @@
         <h6 class="font-weight-bold mb-3">Brands</h6>
 
         <div class="form-check pl-0 mb-3">
-          <input type="checkbox" class="form-check-input filled-in" id="new">
+          <input type="checkbox" class="form-check-input filled-in" id="zara" >
           <label class="form-check-label small text-uppercase card-link-secondary" for="new">Zara</label>
         </div>
         <div class="form-check pl-0 mb-3">

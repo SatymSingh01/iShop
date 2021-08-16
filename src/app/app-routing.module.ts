@@ -16,6 +16,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { AddretailerComponent } from './addretailer/addretailer.component';
 import { AdminComponent } from './admin/admin.component';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
+import { CustomerComponent } from './customer/customer.component';
 
 
 
@@ -41,7 +42,8 @@ const routes: Routes = [
   {path: 'cardview', component: CardviewComponent},
   {path: 'forgotpassword/:usertype', component: ForgotpasswordComponent},
   {path:'addretailer', component:AddretailerComponent},
-  {path:'admin', component:AdminComponent}
+  {path:'admin', component:AdminComponent},
+  {path:'customer/:customerid', component:CustomerComponent}
 
 ];
 

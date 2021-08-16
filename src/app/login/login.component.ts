@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { Customer } from '../Models/customer';
 import { AlertService } from '../Services/alert.service';
 import { AuthenticationService } from '../Services/authentication.service';
+import { CustomerService } from '../Services/customer.service';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +15,11 @@ import { AuthenticationService } from '../Services/authentication.service';
 export class LoginComponent implements OnInit {
   submitted = false;
   loading = false;
-
+  customer!:Customer;
   CustomerLogin!:FormGroup;
   RetailerLogin !:FormGroup;
   userType!:string;
+  customers!:Customer[]
   returnUrl!: string;
    
 
@@ -25,7 +28,8 @@ export class LoginComponent implements OnInit {
     private router:ActivatedRoute,
     private authenticationService: AuthenticationService,
     private alertService: AlertService,
-    private rou:Router ) { }
+    private rou:Router ,
+    private customerservice:CustomerService) { }
  // constructor(private service:ApiCallService,private router:ActivatedRoute,private rou:Router) { }
 
   ngOnInit(): void {
@@ -57,6 +61,9 @@ export class LoginComponent implements OnInit {
        
       },
     );
+    this.customerservice.getAll().subscribe(data=>{      
+      this.customers=data
+    console.log(this.customers)});
 
     //  // reset login status
     //  this.authenticationService.logout();
@@ -87,47 +94,33 @@ export class LoginComponent implements OnInit {
       console.log("invalid user")
       return;
     }
-    this.loading = true;//(method) AuthenticationService.login(username: string, password: string, usertype: string): Observable<any>
-        this.authenticationService.login(this.f.customerEmail.value, this.f.customerPassword.value)
-        .pipe(first())
-            .subscribe(
-                data => {
-                  console.log()
-                    this.rou.navigate(['/productlist']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                    console.log('errror')
-                });
+    this.loading = true;
+    
+   
+      //.filter(customer=>{customer.customerEmail==="shanu.sivsubmi@gmail.com"})[0]
+      this.customer=this.customers.filter(customer=>(customer.customerEmail===this.f.customerEmail.value))[0]
+      console.log(this.customer)
+      if(this.customers!= null)
+     {
+        if(this.customer.customerPassword===this.f.customerPassword.value){
+        console.log('user verfied');
+        localStorage.setItem('currentUser', String(this.customer.customerId));
+        localStorage.setItem('isLoggedIn', "true");
+        console.log(localStorage.getItem('currentUser'))
+        this.rou.navigate(['/productlist'])
+        
+      }
+      else{
+        console.log('user not verified');
+      }
 
-     console.log(JSON.stringify(this.CustomerLogin.value, null, 2));
+     
               
     }
-
-    else{
-      this.submitted = true;
-
-      // stop here if form is invalid
-      if (this.RetailerLogin.invalid) {
-        return;
-      }
-      this.loading = true;//(method) AuthenticationService.login(username: string, password: string, usertype: string): Observable<any>
-          this.authenticationService.login(this.g.retailerEmail.value, this.g.retailerPassword.value)
-              .pipe(first())
-              .subscribe(
-                  data => {
-                      this.rou.navigate([this.returnUrl]);
-                  },
-                  error => {
-                      this.alertService.error(error);
-                      this.loading = false;
-                  });
-  
-       console.log(JSON.stringify(this.RetailerLogin.value, null, 2));
-
-    }
   }
+}
+
+    
   }
 
 

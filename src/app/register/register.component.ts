@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     private customerservice:CustomerService,
     private retailerservice: RetailerService,
     private formBuilder: FormBuilder,
-    private alertService: AlertService,
+    
     private router: Router) { }
 
   ngOnInit(): void {
@@ -128,11 +128,11 @@ export class RegisterComponent implements OnInit {
       res => {
         console.log(res)
         console.log('Succesfully Registered !')
-        this.alertService.success('Registration successful', true);
+        //this.alertService.success('Registration successful', true);
         this.router.navigateByUrl('/login/1')
     },
     error => {
-      this.alertService.error(error);
+     // this.alertService.error(error);
       this.loading = false;
       
     });
@@ -158,11 +158,11 @@ export class RegisterComponent implements OnInit {
       res => {
       console.log(res)
       console.log('Succesfully Registered !')
-      this.alertService.success('Registration successful', true);
+     // this.alertService.success('Registration successful', true);
       this.router.navigateByUrl('/login/0')
     },
     error => {
-      this.alertService.error(error);
+     // this.alertService.error(error);
       this.loading = false;
     });
   }
