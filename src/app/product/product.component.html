@@ -1,0 +1,88 @@
+<head>    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class=" col-md-3 align-items-center">
+                    <div  class = "align-self-center mr-20">
+                      <img src="{{product.productImagesrc}}" class="product-image w-100"/>
+                      </div>
+                </div>
+                <div class="col-md-1">
+                    <span (click)="wishlist(product.productId)" class="like fa fa-heart ml-5 bootstrap-fill"></span> 
+                </div>
+                                  
+                <div class="details col-md-7">
+                    <h3 class="product-title">{{product.productName}}</h3>				
+                        
+                    
+                    <p class="product-description">{{product.productDescription}}                                                                               </p>
+                    <p class="price"><span>$ {{product.productPrice}}</span></p>
+                    <p>Brand:- <span>{{product.productBrand}}</span></p>
+                    <p>Retailed by <span>{{product.retailer.retailerName}}</span></p>
+                    <div class="row">
+                        <div class="col-1">
+                            <button class="btn btn-primary mp-0" (click)="minus()"  [disabled]="quantity==1"><i class="fa fa-minus"></i></button>&nbsp;
+                        </div>
+                        <div class="col-3">   
+                            <input type="text" class="form-control mp-0" [(ngModel)]="quantity" [value]="quantity">
+                            </div>
+                            <div class="col-1">
+                                <button class="btn btn-primary mp-0" (click)="plus()"><i class="fa fa-plus"></i></button>                            
+                            </div>
+                            
+                                                                                              
+                                                               
+                                    
+                        </div>                        
+                            
+                              
+                                     
+                    
+                    <div class="action mt-4">
+                        <button class="add-to-cart rounded"(click)="addtocompare(product.productId)"  type="button">Compare</button>&nbsp;
+                        <button (click)="addtocart(product.productId)" class="add-to-cart rounded"  type="button" >Add to Cart</button>
+                                                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/new/standard/city/053.jpg" alt="Card image cap">
+            <div>
+              <h5 class="card-title mt-2">Product Name</h5>  
+              <p>Price</p>               
+             </div>
+          </div>
+    </div>
+    <div class="col-md-4" >
+        <div class="card" >
+            <img class="card-img-top" src="https://mdbootstrap.com/img/new/standard/city/053.jpg" alt="Card image cap">
+            <div>
+              <h5 class="card-title mt-2">Product Name</h5>    
+              <p>Price</p>             
+             </div>
+          </div>
+    </div>     
+
+    <div class="col-md-4">
+        <div class="card">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/new/standard/city/053.jpg" alt="Card image cap">
+             <h5 class="card-title mt-2">Product Name</h5> 
+             <p>Price</p>               
+             
+        </div>
+    </div>
+</div> -->
+</body>

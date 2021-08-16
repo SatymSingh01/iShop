@@ -1,0 +1,6 @@
+html,body{
+    position: fixed;
+}
+.container{
+ min-height:612px ;
+}

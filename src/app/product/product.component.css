@@ -1,0 +1,82 @@
+body {
+    font-family: 'open sans';
+    overflow-x: hidden; 
+    margin: 20px;
+    color:#075E54
+}
+
+  
+  img:hover
+  {
+    transform: scale(1.02);
+  }
+  
+  
+  .card {
+    margin-top: 50px;
+    padding: 3em;
+    line-height: 1.5em; }
+  
+  @media screen and (min-width: 997px) {
+    .wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+  
+  .details {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; } 
+  
+  
+
+  .product-title, .price {
+    
+    font-weight: bold; }
+  
+ 
+  
+  .product-title, .product-description, .price {
+    margin-bottom: 15px; }
+  
+  .product-title {
+    margin-top: 0; }
+  
+  .size {
+    margin-right: 10px; }
+    .size:first-of-type {
+      margin-left: 40px; }
+
+  
+  .add-to-cart {
+    background: #075E54;
+    padding: 1.2em 1.5em;
+    border: none;
+    text-transform: UPPERCASE;
+    font-weight: bold;
+    color: #fff;
+  }
+  .like{
+    color:#075E54;
+  }
+.add-to-cart:hover {
+      background:teal;
+      color: #fff; }
+.like:hover
+  {
+      color:maroon;
+        }
+  
+  
+  .tooltip-inner {
+
+  padding: 1.3em; }
+
+

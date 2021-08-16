@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2 mt-150">
+            <!-- Section: Sidebar -->
+ <section>
+    <section class="mb-4">
+
+        <h6 class="font-weight-bold mb-3">Sort</h6>
+
+        <div class="form-check">          
+          <label class="form-check-label small text-uppercase">
+            <input  type="radio" [value]=true checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
+            Price High to Low</label>
+        </div>
+        <div class="form-check">          
+          <label class="form-check-label small text-uppercase">
+            <input type="radio" [value]=false checked [(ngModel)]="sort" name="optradio" class="form-check-input" id="lth">
+            Price Low to High</label>
+        </div>
+        
+        <button (click)="sortf()" type="submit" class="profile-edit-btn m-2" name="Logout" value="Sort">Sort</button>
+      
+        
+        
+  </section>
+    <!-- Section: Filters -->
+    <section>
+
+      <h5>Filters</h5>
+
+      <!-- Section: Condition -->
+      <section class="mb-4">
+
+        <h6 class="font-weight-bold mb-3">Brands</h6>
+
+        <div class="form-check pl-0 mb-3">
+          <input type="checkbox" class="form-check-input filled-in" id="zara" >
+          <label class="form-check-label small text-uppercase card-link-secondary" for="new">Zara</label>
+        </div>
+        <div class="form-check pl-0 mb-3">
+          <input type="checkbox" class="form-check-input filled-in" id="used">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="used">Pantaloons</label>
+        </div>
+        <div class="form-check pl-0 mb-3">
+          <input type="checkbox" class="form-check-input filled-in" id="collectible">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="collectible">Westside</label>
+        </div>
+        <div class="form-check pl-0 mb-3 pb-1">
+          <input type="checkbox" class="form-check-input filled-in" id="renewed">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="renewed">Malabar</label>
+        </div>
+
+
+ </section>
+ <section class="mb-4">
+
+    <h6 class="font-weight-bold mb-3">Retailer</h6>
+
+    <div class="form-check pl-0 mb-3" *ngFor = "let r of retailerlist">
+      <input type="checkbox" class="form-check-input filled-in" id="new">
+      <label class="form-check-label small text-uppercase card-link-secondary" for="new">{{r.retailerName}}</label>
+    </div>
+
+
+
+</section>
+      <!-- Section: Condition -->
+
+      <!-- Section: Average -->
+
+      <!-- Section: Average -->
+
+      <!-- Section: Price -->
+      <section class="mb-4">
+
+        <h6 class="font-weight-bold mb-3">Price</h6>
+
+        <div class="form-check pl-0 mb-3">
+          <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Under $25</label>
+        </div>
+        <div class="form-check pl-0 mb-3">
+          <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="2550">$25 to $50</label>
+        </div>
+        <div class="form-check pl-0 mb-3">
+          <input type="radio" class="form-check-input" id="50100" name="materialExampleRadios">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="50100">$50 to $100</label>
+        </div>
+        <div class="form-check pl-0 mb-3">
+          <input type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="100200">$100 to $200</label>
+        </div>
+        <div class="form-check pl-0 mb-3">
+          <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="200above">$200 & Above</label>
+        </div>
+
+      </section>
+    </section>
+    <!-- Section: Filters -->
+
+  </section>
+</div>
+        <div class="col-10">
+
+            <div class="row">
+                <div class="container1">
+                    <div class="row">
+                        <ng-container *ngFor ="let product of productlist">
+                            <div class="card col-md-3">
+                                <div>
+                                    <a><img src="{{product.productImagesrc}}" alt=""></a>
+                                    <ul class="social">
+                                        <li><a [routerLink]="['/product/', product.productId]" ><span class="fa fa-eye"></span></a></li>
+                                        <li><a href="#" (click)="wishlist(product.productId);" ><span class="fa fa-heart"></span></a></li>
+                                    </ul>
+                                </div>
+                                <p style="white-space: nowrap;overflow:hidden;text-overflow: ellipsis; max-width: 100ch;">{{product.productName}}</p> 
+                                <p class="m-1"><strong>Brand</strong>{{product.productBrand}}</p>
+                                <p class="m-1"><strong>Price </strong>{{product.productPrice | currency:'INR':'symbol-narrow'}}</p>
+                            </div>
+                        </ng-container> 
+
+                </div>
+        </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<hr>

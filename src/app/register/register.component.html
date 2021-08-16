@@ -1,0 +1,123 @@
+
+<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.jpg'); background-repeat:repeat;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card height=10%" style="border-radius: 15px;">
+              <div class="card-body  p-5">
+                <img src='/../../assets/Images/Ishop/Logo.jpeg' class="w-100; rounded; center" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem; width:100px;height:100px;" alt="Sample photo">
+                <!-- <h4 class="text-uppercase text-center mb-5">Sign UP</h4> -->
+                
+                <div *ngIf ="userType==='1' ; else elseBlock">
+                  <form [formGroup]="CustomerRegister" (ngSubmit)="onSubmit()" >
+                   
+                
+                    <div class=" form-outline mb-12 form-group col-xs-2">
+                      <label class="form-label" for="customerName">Your Name</label>
+                      <input type="text" id="customerName" class="form-control form-control-sg" formControlName="customerName" #name1/>
+                      <div *ngIf="f.customerName?.touched && f.customerName?.invalid" class="alert alert-danger">
+                        <div *ngIf="f.customerName.errors?.minlength">Name should be Atleast 3 character</div> 
+                        <div *ngIf="f.customerName.errors?.required">Please Enter User Name</div>
+                        </div>
+                    </div>
+                    <div class=" form-outline mb-12 form-group col-xs-2">
+                      <label class="form-label" for="customerEmail">Email</label>
+                      <input type="text" id="customerEmail" class="form-control form-control-sg" formControlName="customerEmail"/>
+                      <div *ngIf="f.customerEmail?.touched && f.customerEmail?.invalid" class="alert alert-danger">
+                        <div *ngIf="f.customerEmail.errors?.customerEmail">Please enter valid email</div>
+                        <div *ngIf="f.customerEmail.errors?.required">Please enter email</div>
+                        </div>
+                    </div>
+                    <div class=" form-outline mb-12 form-group col-xs-2">
+                      <label class="form-label" for="customerPhone">Phone Number</label>
+                      <input type="text" id="customerPhone" class="form-control form-control-sg" formControlName="customerPhone"/>
+                      <div *ngIf="f.customerPhone?.touched && f.customerPhone?.invalid" class="alert alert-danger">
+                        <div *ngIf="f.customerPhone.errors?.pattern">Please Enter Valid Number</div>
+                        <div *ngIf="f.customerPhone.errors?.required">Please Enter Phone Number</div>
+                        </div>
+                    </div>
+                    <div class=" form-outline mb-12 form-group col-xs-2">
+                      <label class="form-label" for="customerPassword">Password</label>
+                      <input type="text" id="customerPassword" class="form-control form-control-sg" formControlName="customerPassword"/>
+                      <div *ngIf="f.customerPassword?.touched && f.customerPassword?.invalid" class="alert alert-danger">
+                        <div *ngIf="f.customerPassword.errors?.minlength">Password should be atleast 6 character</div>
+                        <div *ngIf="f.customerPassword.errors?.required">Please Enter Password</div>
+                        </div>
+                    </div>
+                    <div class=" form-outline mb-12 form-group col-xs-2">
+                      <label class="form-label" for="confirmpassword">Confirm Password</label>
+                      <input type="text" id="confirmpassword" class="form-control form-control-sg" formControlName="confirmpassword"/>
+                      <div *ngIf="f.confirmpassword?.touched && f.confirmpassword?.invalid" class="alert alert-danger">
+                        <div *ngIf="f.confirmpassword.errors?.matching">Confirm Password doesn't match</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" [disabled]="!CustomerRegister.valid" class="btn btn-success btn-block btn-sg gradient-custom-4 text-body">Register</button>
+                      
+                    </div>
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+                    </form>
+                </div>
+                    <ng-template #elseBlock>
+                      <form [formGroup]="RetailerRegister" (ngSubmit)="onSubmit()" >
+                        <!-- {{name1.className}} -->
+                   
+                       <div class=" form-outline mb-12 form-group col-xs-2">
+                         <label class="form-label" for="retailerName">Your Name</label>
+                         <input type="text" id="retailerName" class="form-control form-control-sg" formControlName="retailerName"/>
+                         <div *ngIf="g.retailerName.touched && g.retailerName.invalid" class="alert alert-danger">
+                           <div *ngIf="g.retailerName.errors?.minlength">Retailer Name should be Atleast 3 character</div> 
+                           <div *ngIf="g.retailerName.errors?.required">Please Enter User Retailer Name</div>
+                           </div>
+                        </div>
+      
+                      <div class=" form-outline mb-12 form-group col-xs-2">
+                        <label class="form-label" for="retailerEmail">Email</label>
+                        <input type="text" id="retailerEmail" class="form-control form-control-sg" formControlName="retailerEmail"/>
+                        <div *ngIf="g.retailerEmail.touched && g.retailerEmail.invalid" class="alert alert-danger">
+                          <div *ngIf="g.retailerEmail.errors?.retailerEmail">Please enter valid email</div>
+                          <div *ngIf="g.retailerEmail.errors?.required">Please enter Email ID </div>
+                          </div>
+                      </div>
+                      <div class=" form-outline mb-12 form-group col-xs-2">
+                        <label class="form-label" for="retailerPhone">Phone Number</label>
+                        <input type="text" id="retailerPhone" class="form-control form-control-sg" formControlName="retailerPhone"/>
+                        <div *ngIf="g.retailerPhone.touched && g.retailerPhone.invalid" class="alert alert-danger">
+                          <div *ngIf="g.retailerPhone.errors?.pattern">Please Enter Valid Number</div>
+                          <div *ngIf="g.retailerPhone.errors?.required">Please Enter Phone Number</div>
+                          </div>
+                      </div>
+                      <div class=" form-outline mb-12 form-group col-xs-2">
+                        <label class="form-label" for="retailerPassword">Password</label>
+                        <input type="text" id="retailerPassword" class="form-control form-control-sg" formControlName="retailerPassword"/>
+                        <div *ngIf="g.retailerPassword.touched && g.retailerPassword.invalid" class="alert alert-danger">
+                          <div *ngIf="g.retailerPassword.errors?.minlength">Password should be atleast 6 character</div>
+                          <div *ngIf="g.retailerPassword.errors?.required">Please Enter Password</div>
+                          </div>
+                      </div>
+                      <div class=" form-outline mb-12 form-group col-xs-2">
+                        <label class="form-label" for="confirmpassword">Confirm Password</label>
+                        <input type="text" id="confirmpassword" class="form-control form-control-sg" formControlName="confirmpassword"/>
+                        <div *ngIf="g.confirmpassword.touched && g.confirmpassword.invalid" class="alert alert-danger">
+                          <div *ngIf="g.confirmpassword.errors?.matching">Confirm Password doesn't match</div>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="d-flex justify-content-center">
+                        <button type="submit" [disabled]="!RetailerRegister.valid" class="btn btn-success btn-block btn-sg gradient-custom-4 text-body">Register</button>
+                        
+                      </div>
+                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p> -->
+                       </form>
+
+                    </ng-template>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
