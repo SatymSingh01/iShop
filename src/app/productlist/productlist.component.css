@@ -245,3 +245,8 @@ h3.h3 {
 .card .social li a:hover:before {
     opacity: 1
 }
+
+.far{
+    color:rgb(28, 102, 57)
+    ;
+}

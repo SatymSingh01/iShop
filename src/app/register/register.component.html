@@ -8,16 +8,16 @@
               <div class="card-body  p-5">
                 <img src='../../assets/Images/logo.jpeg' class="w-100; rounded; center" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem; width:100px;height:100px;" alt="Sample photo">
                 <!-- <h4 class="text-uppercase text-center mb-5">Sign UP</h4> -->
-                
+
                 <div *ngIf ="userType===1 ; else elseBlock">
                   <form [formGroup]="CustomerRegister" (ngSubmit)="onSubmit()" >
                     <!-- {{name1.className}} -->
-                
+
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="customerName">Your Name</label>
                       <input type="text" id="customerName" class="form-control form-control-sg" formControlName="customerName" #name1/>
                       <div *ngIf="g.customerName?.touched && g.customerName?.invalid" class="alert alert-danger">
-                        <div *ngIf="g.customerName.errors?.minlength">Name should be Atleast 3 character</div> 
+                        <div *ngIf="g.customerName.errors?.minlength">Name should be Atleast 3 character</div>
                         <div *ngIf="g.customerName.errors?.required">Please Enter User Name</div>
                         </div>
                     </div>
@@ -25,8 +25,15 @@
                       <label class="form-label" for="customerEmail">Email</label>
                       <input type="text" id="customerEmail" class="form-control form-control-sg" formControlName="customerEmail"/>
                       <div *ngIf="g.customerEmail?.touched && g.customerEmail?.invalid" class="alert alert-danger">
-                        <div *ngIf="g.customerEmail.errors?.customerEmail">Please enter valid email</div>
+                        <div *ngIf="g.customerEmail.errors?.email">Please enter valid email</div>
                         <div *ngIf="g.customerEmail.errors?.required">Please enter email</div>
+                        <div *ngIf="emailexists">{{message}}</div>
+
+                        <!-- <div *ngFor = "let myemail of customerlist">
+                          <div *ngIf = "g.customerEmail===myemail.CustomerEmail">
+                            <h5>user email id already exists</h5>
+                          </div>
+                        </div> -->
                         </div>
                     </div>
                     <div class=" form-outline mb-12 form-group col-xs-2">
@@ -55,7 +62,7 @@
                     <br>
                     <div class="d-flex justify-content-center">
                       <button type="submit"  class="btn btn-success btn-block btn-sg gradient-custom-4 text-body">Register</button>
-                      
+
                     </div>
                     <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink = "/login" class="fw-bold text-body"><u>Login here</u></a></p>
                     </form>
@@ -63,16 +70,16 @@
                     <ng-template #elseBlock>
                       <form [formGroup]="RetailerRegister" (ngSubmit)="onSubmit()" >
                         <!-- {{name1.className}} -->
-                   
+
                        <div class=" form-outline mb-12 form-group col-xs-2">
                          <label class="form-label" for="retailerName">Your Name</label>
                          <input type="text" id="retailerName" class="form-control form-control-sg" formControlName="retailerName"/>
                          <div *ngIf="g.retailerName?.touched && g.retailerName?.invalid" class="alert alert-danger">
-                           <div *ngIf="g.retailerName.errors?.minlength">Retailer Name should be Atleast 3 character</div> 
+                           <div *ngIf="g.retailerName.errors?.minlength">Retailer Name should be Atleast 3 character</div>
                            <div *ngIf="g.retailerName.errors?.required">Please Enter User Retailer Name</div>
                            </div>
                         </div>
-      
+
                       <div class=" form-outline mb-12 form-group col-xs-2">
                         <label class="form-label" for="retailerEmail">Email</label>
                         <input type="text" id="retailerEmail" class="form-control form-control-sg" formControlName="retailerEmail"/>
@@ -107,13 +114,13 @@
                       <br>
                       <div class="d-flex justify-content-center">
                         <button type="submit" [disabled]="!RetailerRegister.valid" class="btn btn-success btn-block btn-sg gradient-custom-4 text-body">Register</button>
-                        
+
                       </div>
                       <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink = "/login" class="fw-bold text-body"><u>Login here</u></a></p> -->
                        </form>
 
                     </ng-template>
-            
+
               </div>
             </div>
           </div>

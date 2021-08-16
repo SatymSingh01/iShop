@@ -16,10 +16,13 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   RetailerRegister !:FormGroup;
   CustomerRegister !:FormGroup;
-  customer !: Customer; //1
+  customer: any; //1
   retailer !: Retailer;
   userType:number=1;
-  
+  message!: string;
+emailexists:boolean = false
+  customerlist:Customer[]=[];
+  //custemail:CustomerEmail[]
   constructor(
     private customerservice:CustomerService,
     private retailerservice: RetailerService,
@@ -45,7 +48,9 @@ export class RegisterComponent implements OnInit {
     },
     {
       validators: [Validation.match('password', 'confirmpassword')]
+    
     }
+
   );
 
 
@@ -69,6 +74,12 @@ export class RegisterComponent implements OnInit {
       validators: [Validation.match('retailerPassword', 'confirmpassword')]
     }
   );
+  this.customerservice.getAll().subscribe(data=>{      
+    this.customer = data.filter(customer=>(customer.customerEmail===this.CustomerRegister.get('customerEmail')?.value))})
+    if(this.customer!=null){
+      this.emailexists = true;
+      this.message = "email id already taken!"
+    }
    }
   
   get f(): { [key: string]: AbstractControl } {
@@ -102,6 +113,15 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
 
     if(this.userType==1){
+      this.customerservice.getAll().subscribe(data=>{      
+        this.customer = data.filter(customer=>(customer.customerEmail===this.CustomerRegister.get('customerEmail')?.value))})
+        if(this.customer!=null){
+          this.emailexists = true;
+          this.message = "email id already taken!"
+          console.log("email id already taken!")
+        }
+
+
     this.customer=this.CustomerRegister.value
     console.log(this.customer)
     this.customerservice.create(this.CustomerRegister.value).subscribe(res => {

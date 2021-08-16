@@ -18,5 +18,9 @@ export class Validation {
           }
         };
       }
+    // static emailexists(email:string): ValidatorFn
+    // {
+
+    // }
     
 }
