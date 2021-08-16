@@ -28,8 +28,9 @@ approveEmail(toEmail:string,retailer:Retailer){
     console.log(retailer.retailerId )
   this.addretailer.update(retailer.retailerId,this.retailer).subscribe();
   this.ngOnInit();
-  // this.sendemail.create(toEmail).subscribe();
-  // console.log('Product created!') 
+  
+  this.sendemail.create(toEmail).subscribe();
+  console.log('Product created!') 
 
 }
 }

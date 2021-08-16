@@ -19,7 +19,8 @@ export class SendEmailService {
 
   create(toEmail:string){
     console.log('create email')
-    return this.httpClient.post(this.ApiUrl + '/Email/', {toEmail}, this.httpOptions) 
+    console.log(toEmail)
+    return this.httpClient.post(this.ApiUrl + '/Email/', JSON.stringify(toEmail), this.httpOptions) 
 
   }
 }
