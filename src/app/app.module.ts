@@ -20,6 +20,7 @@ import { AddretailerComponent } from './addretailer/addretailer.component';
 import { ADDPRODUCTComponent } from './addproduct/addproduct.component';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
 import { LoginComponent } from './login/login.component';
+
 import { RegisterComponent } from './register/register.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
@@ -42,9 +43,9 @@ import { AdminComponent } from './admin/admin.component';
     AddretailerComponent,
     ADDPRODUCTComponent,
     CategoryproductComponent,
+
     LoginComponent,
-    RegisterComponent,
-    LoginComponent,
+    RegisterComponent,    
     ChangepasswordComponent,
     ForgotpasswordComponent,
     AdminComponent

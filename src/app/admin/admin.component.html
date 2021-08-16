@@ -18,7 +18,7 @@
     <td>{{retailer.retailerName}}</td>
     <td>{{retailer.retailerEmail}}</td>
     <td><i class="fa fa-dot-circle-o text-danger"></i><span class="ms-1">{{retailer.verificationStatus}}</span></td>
-    <td><button type="button" class="btn btn-primary btn-sm">Approve</button></td>
+    <td><button type="button" (click)="approveEmail(retailer.retailerEmail,retailer)" class="btn btn-primary btn-sm">Approve</button></td>
   </tr>
   <!-- <tr>
     <th scope="row">2</th>
