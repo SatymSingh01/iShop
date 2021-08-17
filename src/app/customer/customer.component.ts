@@ -30,5 +30,8 @@ logout() {
   window.location.href = "/productlist";
   //this.rou.navigate(['/productlist'])
 }
-
+delete(id:number)
+{
+  this.customerservice.delete(id).subscribe();
+}
 }

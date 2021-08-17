@@ -26,7 +26,10 @@ export class OrderComponent implements OnInit {
   zipcode!:string
   phone!:string 
   oitems:OrderItem[]=[]
-  
+  res:any
+  date=new Date();
+  carts:any
+
   //customerId orderTotal orderDate modeOfPayment 
 
   constructor(private orderdetails:OrderDetailsService,private orderitems:OrderItemService ,public fb:FormBuilder,private rou:Router,private customerService:CustomerService,private cartService: CartService, private router:ActivatedRoute) { }
@@ -63,7 +66,7 @@ export class OrderComponent implements OnInit {
     {
     customerId:+this.customerid,
     orderTotal:this.grandTotal,
-    orderDate:'10028',
+    orderDate:String(this.date.getDate()+'/'+this.date.getMonth()+'/'+this.date.getFullYear()),
     modeOfPayment:'CARD',
     orderAddress:this.orderAddress,
     state:this.state,
@@ -73,7 +76,15 @@ export class OrderComponent implements OnInit {
 
     }
     console.log(this.od);
-    this.orderdetails.create(this.od).subscribe();
+
+    this.orderdetails.create(this.od).subscribe(data=>{this.res=data.orderId
+      console.log(this.res);
+      this.cart.forEach(element => {
+        this.carts={productId:element.productId,orderId:this.res,orderitemQuantity:element.cartproductQuantity,orderitemTotal:element.cartproductQuantity*element.product.productPrice}
+      this.orderitems.create(this.carts).subscribe()}) });
+         
+    
+    
 
     this.rou.navigate(['/cart/',this.customerid])
   }

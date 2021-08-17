@@ -48,6 +48,7 @@ export class ADDPRODUCTComponent implements OnInit {
     this.product=this.addProduct.value
     console.log(this.product)
     this.productservice.create(this.addProduct.value).subscribe(res => {
+      alert("Product Added Successfully!")
       window.location.href = "/retailer";
      
     });

@@ -19,16 +19,16 @@ export class OrderItemService {
   constructor(private httpClient:HttpClient) { }
 
   getAll(): Observable<OrderItem[]> {
-    return this.httpClient.get<OrderItem[]>(this.ApiUrl + '/orderitem/')
+    return this.httpClient.get<OrderItem[]>(this.ApiUrl + '/orderitems/')
     
   }
 
   create(product:OrderItem):Observable<OrderItem>{
-    return this.httpClient.post<OrderItem>(this.ApiUrl + '/orderitem/', JSON.stringify(product), this.httpOptions)   
+    return this.httpClient.post<OrderItem>(this.ApiUrl + '/orderitems/', JSON.stringify(product), this.httpOptions)   
   }
 
   getById(id:number): Observable<OrderItem> {
-    return this.httpClient.get<OrderItem>(this.ApiUrl + '/orderitem/' + id)    
+    return this.httpClient.get<OrderItem>(this.ApiUrl + '/orderitems/' + id)    
   }   
   update(id:number, orderitem:OrderItem): Observable<OrderItem> {
     return this.httpClient.put<OrderItem>(this.ApiUrl + '/orderitem/' + id, JSON.stringify(orderitem), this.httpOptions)
@@ -39,6 +39,6 @@ export class OrderItemService {
 
   delete(id:number)
   {
-    return this.httpClient.delete<OrderItem>(this.ApiUrl+'/orderitem/'+id, this.httpOptions);
+    return this.httpClient.delete<OrderItem>(this.ApiUrl+'/orderitems/'+id, this.httpOptions);
   }
 }

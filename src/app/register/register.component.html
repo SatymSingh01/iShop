@@ -39,7 +39,7 @@
                     </div>
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="customerPassword">Password</label>
-                      <input type="text" id="customerPassword" class="form-control form-control-sg" formControlName="customerPassword"/>
+                      <input type="password" id="customerPassword" class="form-control form-control-sg" formControlName="customerPassword"/>
                       <div *ngIf="f.customerPassword?.touched && f.customerPassword?.invalid" class="alert alert-danger">
                         <div *ngIf="f.customerPassword.errors?.minlength">Password should be atleast 6 character</div>
                         <div *ngIf="f.customerPassword.errors?.required">Please Enter Password</div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class=" form-outline mb-12 form-group col-xs-2">
                       <label class="form-label" for="confirmpassword">Confirm Password</label>
-                      <input type="text" id="confirmpassword" class="form-control form-control-sg" formControlName="confirmpassword"/>
+                      <input type="password" id="confirmpassword" class="form-control form-control-sg" formControlName="confirmpassword"/>
                       <div *ngIf="f.confirmpassword?.touched && f.confirmpassword?.invalid" class="alert alert-danger">
                         <div *ngIf="f.confirmpassword.errors?.matching">Confirm Password doesn't match</div>
                         </div>
@@ -91,7 +91,7 @@
                       </div>
                       <div class=" form-outline mb-12 form-group col-xs-2">
                         <label class="form-label" for="retailerPassword">Password</label>
-                        <input type="text" id="retailerPassword" class="form-control form-control-sg" formControlName="retailerPassword"/>
+                        <input type="password" id="retailerPassword" class="form-control form-control-sg" formControlName="retailerPassword"/>
                         <div *ngIf="g.retailerPassword.touched && g.retailerPassword.invalid" class="alert alert-danger">
                           <div *ngIf="g.retailerPassword.errors?.minlength">Password should be atleast 6 character</div>
                           <div *ngIf="g.retailerPassword.errors?.required">Please Enter Password</div>
@@ -99,7 +99,7 @@
                       </div>
                       <div class=" form-outline mb-12 form-group col-xs-2">
                         <label class="form-label" for="confirmpassword">Confirm Password</label>
-                        <input type="text" id="confirmpassword" class="form-control form-control-sg" formControlName="confirmpassword"/>
+                        <input type="password" id="confirmpassword" class="form-control form-control-sg" formControlName="confirmpassword"/>
                         <div *ngIf="g.confirmpassword.touched && g.confirmpassword.invalid" class="alert alert-danger">
                           <div *ngIf="g.confirmpassword.errors?.matching">Confirm Password doesn't match</div>
                           </div>

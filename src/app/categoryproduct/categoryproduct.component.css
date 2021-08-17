@@ -1,5 +1,6 @@
 .container {
-    margin-top: 100px
+    margin-top: 100px;
+    height:610px
 }
 
 h3.h3 {
@@ -244,4 +245,14 @@ h3.h3 {
 .card .social li a:hover:after,
 .card .social li a:hover:before {
     opacity: 1
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: white;
+    background-color: #023331;
+    cursor: pointer;
 }

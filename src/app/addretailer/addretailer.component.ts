@@ -42,9 +42,10 @@ export class AddretailerComponent implements OnInit {
     console.log(this.retailer)
     this.retailerservice.create(this.addRetailer.value).subscribe(res => {
       console.log(res)
-      console.log('retailer added!')
-     
+      alert('Retailer added successfully')   
+      window.location.href = "/admin";  
     });
+    
 
 }
 }
