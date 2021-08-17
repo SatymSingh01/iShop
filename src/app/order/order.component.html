@@ -3,19 +3,21 @@
     <div class="col-md-7">
         <div class="left border">
             <div class="row"> <span class="header">Place Order</span>
-                <form> 
-                    <span>Address :</span> <input type="text" class="row-3" placeholder="Linda Williams"> 
+                <div class="form1" > 
+                    <span>Address :</span> <input [(ngModel)]="orderAddress" type="text"  class="row-3" placeholder="Linda Williams"> 
                     <div class="row">
-                        <div class="col-4"><span>City :</span> <input placeholder=""> </div>
-                        <div class="col-4"><span>State :</span> <input placeholder=""> </div>
+                        <div class="col-4"><span>City :</span> <input class="form-control"  [(ngModel)]="city" placeholder=""> </div>
+                        <div class="col-4"><span>State :</span> <input class="form-control" name="state" [(ngModel)]="state" placeholder=""> </div>
                     </div> 
-                    <div class="col-4"><span>Zipcode :</span> <input placeholder=""> </div>
-                    <span>Phone No.:</span> <input placeholder="">
-                </form>
+                    <div class="col-4"><span>Zipcode :</span> <input  name="zip" [(ngModel)]="zipcode" placeholder=""> </div>
+                    <span>Phone No.:</span> <input [(ngModel)]="phone" name = "phone" class="form-control" placeholder="">
+                </div>               
+                 
+                    </div>
                 </div>
                 <hr>
-                <div class="row"> <span class="header">Payment</span>            
-                </div>
+            <div class="row"> <span class="header">Payment</span>            
+             
             <div class="col-md-6">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
@@ -28,18 +30,18 @@
             </div>
             <div class="col-md-9">
                 <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
-                        <form> <span>Cardholder's name:</span> <input placeholder="Name"> <span>Card Number:</span> <input placeholder="0125 6780 4567 9909">
+                    <div class="tab-pane fade show active"  id="card" role="tabpanel" aria-labelledby="card-tab">
+                        <div class="form1"> <span>Cardholder's name:</span> <input placeholder="Name"> <span>Card Number:</span> <input placeholder="0125 6780 4567 9909">
                             <div class="row">
                                 <div class="col-4"><span>Expiry date:</span> <input placeholder="YY/MM"> </div>
                                 <div class="col-4"><span>CVV:</span> <input id="cvv"> </div>
                             </div>
-                        </form>        
+                        </div>        
                     </div>
                     <div class="tab-pane fade" id="upi" role="tabpanel" aria-labelledby="upi-tab">
-                        <form> <span>UPI ID:</span> <input placeholder="123@okicici"> 
+                        <div class="form1"> <span>UPI ID:</span> <input placeholder="123@okicici"> 
                             
-                        </form>                          
+                        </div>                          
                     </div>
                 </div>
             </div>
@@ -48,35 +50,30 @@
     
     <div class="col-md-5">
         <div class="right border">
-            <div class="header">Order Summary</div>
-            <p>2 items</p>
+            <div class="header">Order Summary</div>            
             <div class="row item" *ngFor="let c of cart">
                 <div class="col-4 align-self-center"><img class="img-fluid" src="{{c.product.productImagesrc}}"></div>
-                <div class="col-8">
-                    <div class="row"><b>${{c.product.productPrice}}</b></div>
-                    <div class="row text-muted">{{c.product.productName}}</div>
-                    <div class="row">{{c.cartproductQuantity}}</div>
+                <div class="col-8">                    
+                    <div class="row">{{c.product.productName}}</div>
+                    <div class="row">Price:{{c.product.productPrice}}</div>
+                    <div class="row">Quantity:{{c.cartproductQuantity}}</div>
+                    <div class="row">Subtotal:{{c.cartproductQuantity*c.product.productPrice}}</div>
                 </div>
             </div>
             
             <hr>
+            
             <div class="row lower">
-                <div class="col text-left">Subtotal</div>
-                <div class="col text-right">$ Total</div>
-            </div>
-            <div class="row lower">
-                <div class="col text-left">Delivery</div>
-                <div class="col text-right">$1</div>
-            </div>
-            <div class="row lower">
-                <div class="col text-left"><b>Total to pay</b></div>
-                <div class="col text-right"><b>$</b></div>
+                <div class="col text-left"><b>Total</b></div>
+                <div class="col text-right"><b>{{grandTotal}}</b></div>
             </div>
             
-            </div> <button class="btn">Place order</button>
+             <button (click)="porder()" class="btn">Place order</button>
             
         </div>
     </div>
 </div>
+    </div>
+
 
 

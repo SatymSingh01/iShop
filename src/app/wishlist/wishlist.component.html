@@ -7,6 +7,20 @@
                    <h6 style="overflow:hidden;text-overflow: ellipsis; max-width:25ch;">{{item.product.productName}}</h6>
                    <h6><strong>Price </strong>${{item.product.productPrice}}</h6> 
          </div>
-    </ng-container> 
+         
+    </ng-container>
+    <ng-container *ngIf="productlist.length===0">
+        <div class="container">
+            <div class="card">
+                <h5 class="card-title">My Cart</h5>
+            </div>
+            <div class="center">
+                <!-- <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt=""> -->
+                <h5>Your Wishlist is Empty!</h5>
+                <h6>Add item to it now</h6>
+                <button routerLink="/productlist" class="btn ">Shop Now</button>
+            </div>
+        </div> 
+    </ng-container>
 </div>
 </div>

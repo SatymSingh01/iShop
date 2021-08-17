@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cart } from '../Models/cart';
 import { Product } from '../Models/product';
 import { CartService } from '../Services/cart.service';
@@ -16,11 +16,13 @@ export class CartComponent implements OnInit {
   public cart:Cart[]=[];
   public grandTotal: number =0;
   public product:Product[]=[];
+  customerid!:string
 
-  constructor(private customerService:CustomerService,private cartService: CartService, private router:ActivatedRoute) { }
+  constructor(private rou:Router,private customerService:CustomerService,private cartService: CartService, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
-  this.customerService.getById(this.router.snapshot.params['customerid'])
+    this.customerid=this.router.snapshot.params['customerid']
+  this.customerService.getById(+this.customerid)
   .subscribe(res=>{
     this.cart = res.cart;
 
@@ -28,9 +30,7 @@ export class CartComponent implements OnInit {
       this.grandTotal+=element.cartproductQuantity*element.product.productPrice;
       
     });
-   })
-
-     
+   })    
   
 
 
@@ -38,7 +38,8 @@ export class CartComponent implements OnInit {
   removeItem(id: number){
     console.log("delete");
      this.cartService.delete(id).subscribe();
-     this.ngOnInit()
+     this.ngOnInit()     
+     this.rou.navigate(['/cart/',this.router.snapshot.params['customerid']]) 
      
 
   }

@@ -26,7 +26,7 @@ export class OrderDetailsService {
   create(product:OrderDetails):Observable<OrderDetails>{
     return this.httpClient.post<OrderDetails>(this.ApiUrl + '/orderdetails/', JSON.stringify(product), this.httpOptions)   
   }
-
+  
   getById(id:number): Observable<OrderDetails> {
     return this.httpClient.get<OrderDetails>(this.ApiUrl + '/orderdetails/' + id)    
   }   

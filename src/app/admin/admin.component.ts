@@ -23,12 +23,13 @@ export class AdminComponent implements OnInit {
   }
 
 approveEmail(toEmail:string,retailer:Retailer){
+  
   this.retailer={retailerId:retailer.retailerId,retailerName:retailer.retailerName , retailerPassword:retailer.retailerPassword,
     retailerEmail:retailer.retailerEmail,retailerPhone:retailer.retailerPhone,verificationStatus:'true' }
     console.log(retailer.retailerId )
   this.addretailer.update(retailer.retailerId,this.retailer).subscribe();
-  this.ngOnInit();
-  // this.sendemail.create(toEmail).subscribe();
+  window.location.href="/admin"
+  // this.sendemail.create(toEmail).subscribe();  
   // console.log('Product created!') 
 
 }

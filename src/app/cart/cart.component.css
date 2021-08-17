@@ -60,3 +60,13 @@ h5,h6{
 .fa{
     color: black;
 }
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: white;
+    background-color: #023331;
+    cursor: pointer;
+}

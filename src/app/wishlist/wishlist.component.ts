@@ -57,7 +57,8 @@ export class WishlistComponent implements OnInit {
       });      
     }
      this.wishlistservice.delete(itemid).subscribe();
-     this.rou.navigate(['/wishlist',this.router.snapshot.params['customerid']])    
+     alert("Item Added to cart ")
+     this.rou.navigate(['/wishlist/',this.router.snapshot.params['customerid']])    
 
   }}
 

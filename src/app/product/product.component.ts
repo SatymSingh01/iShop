@@ -26,6 +26,7 @@ export class ProductComponent implements OnInit {
   wishlistl!:any;
   quantity:number = 1;
   customerid!:string;
+  useractive!:boolean
   
 
   constructor(
@@ -42,9 +43,9 @@ export class ProductComponent implements OnInit {
     this.productservice.getById(this.router.snapshot.params['productid']).subscribe((data)=>{
       console.log(data)
       this.product=data});
-      if(localStorage.getItem('isLoggedIn')==="true")
-      {
-              
+      this.useractive=localStorage.getItem('isLoggedIn')==="true"
+      if(this.useractive)
+      {              
         this.customerid = localStorage.getItem('currentUser')|| "";  
         console.log(" id:"+this.customerid)     
       }
@@ -56,9 +57,9 @@ export class ProductComponent implements OnInit {
   }
 
   addtocart(productid:number)
-  {         
-        
-    if(this.customer.cart.length===0)
+  {   if(this.useractive)
+    {
+      if(this.customer.cart.length===0)
     {
       this.cart = {productId:productid,cartproductQuantity:this.quantity,customerId:+this.customerid}
       this.cartservice.create(this.cart).subscribe();
@@ -80,13 +81,20 @@ export class ProductComponent implements OnInit {
         
       });
 
-    }
-   
-     
+    }  
+    }   
+    else{
+      alert("Login to add to cart")
+      window.location.href="/cardview"
+    }   
+        
+    
   }
   wishlist(productid:number)
   {     console.log('wishlist')
-  if(this.customer.wishlist.length===0)
+  if(this.useractive)
+  {
+    if(this.customer.wishlist.length===0)
   {
     console.log('create')
     this.wishlistl = {productId:productid,customerId:+this.customerid}
@@ -106,9 +114,12 @@ export class ProductComponent implements OnInit {
           this.wishlistservice.create(this.wishlistl).subscribe();
         }
       });  
-       
-   
-     
+  }
+  else{
+    alert("Login to add to wishlist")
+    window.location.href="/cardview"
+  }
+  
   }
   plus(){this.quantity+=1}
   minus(){
@@ -117,9 +128,17 @@ export class ProductComponent implements OnInit {
       this.quantity-=1}
     }
 
-    addtocompare(productid:number)
+    addtocompare(productid:number,categoryid:number)
     {
-      this.compareservice.Add(productid);
+      if(this.useractive)
+      {
+        console.log("added to compare")
+        this.compareservice.Add(productid,categoryid);
+      }
+      else{
+        alert("Login to compare")
+        window.location.href="/cardview"
+      }
     }
 
 }
