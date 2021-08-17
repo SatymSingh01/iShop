@@ -1,0 +1,39 @@
+<section class="container align-items-center">
+<div><button type="button" routerLink = "/addretailer" class="btn btn-primary colr">Add Retailer</button></div><br>
+
+  
+<table class="table table-bordered w-75 p-3 align-items-center">
+<thead class="thead-light">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Status</th>
+    <th scope="col">To Verify</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let retailer of retailers">
+    <th scope="row">{{retailer.retailerId}}</th>
+    <td>{{retailer.retailerName}}</td>
+    <td>{{retailer.retailerEmail}}</td>
+    <td><i class="fa fa-dot-circle-o text-danger"></i><span class="ms-1">{{retailer.verificationStatus}}</span></td>
+    <td><button type="button" (click)="approveEmail(retailer.retailerEmail,retailer)" class="btn btn-primary btn-sm">Approve</button></td>
+  </tr>
+  <!-- <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Approved</span></td>
+    <td><button type="button" class="btn btn-primary btn-sm">Approve</button></td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Larry</td>
+    <td>the Bird</td>
+    <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Approved</span></td>
+    <td><button type="button" class="btn btn-primary btn-sm">Approve</button></td>
+  </tr> -->
+</tbody>
+</table>
+</section>

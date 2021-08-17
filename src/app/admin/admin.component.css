@@ -1,0 +1,46 @@
+.container
+{
+ margin-top: 10%;   
+}
+.table{
+    margin-left: auto;
+margin-right: auto;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif
+}
+
+
+.form-control {
+    border: none;
+    padding-left: 32px
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: none
+}
+
+.green {
+    color: green
+}
+/* .profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: white;
+    background-color: #023331;
+    cursor: pointer;
+} */
+.colr{
+    background-color: #023331;
+    margin-left: 75%;
+}
+
+.btn{
+    background-color: rgba(18, 145, 96, 0.952);
+}

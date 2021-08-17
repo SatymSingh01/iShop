@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg fixed-top container-fluid">
+    <a class="navbar-brand" routerlink="/productlist">
+    <img width="40" height="40" src="/../../assets/Images/Ishop/Logo.jpeg" width="50" height="50" class="d-inline-block align-top" alt=""></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/productlist">Products<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="useractive?'/compare':'/cardview'">Compare</a>
+        </li>
+        <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            Category
+          </a>
+   
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <div>
+              <a [routerLink]="['/category/',c.categoryId]" *ngFor="let c of category" class="dropdown-item">{{c.categoryName}}</a>
+            </div>
+            
+          </div> 
+         
+        </li>
+        
+      </ul>
+      
+      <!-- <form class="d-flex">
+        <input class="form-control me-0" type="search" placeholder="Search" aria-label="Search">
+        <button class="button btn nav-item"   type="submit">Search</button>
+      </form> -->
+      <ul class="nav navbar-nav navbar">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="useractive?['/wishlist/', customerid]:'/cardview'"><span class="fa fa-heart"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="useractive?['/cart/', customerid]:'/cardview'"><span class="fa fa-shopping-cart "></span></a>
+        </li>
+        <!-- <button routerLink = "cart" class="btn ">
+          <i style="font-size: 35px;" class="fa fa-shopping-cart fa-xs " aria-hidden="true"></i>
+          <div style="font-size: 10px;" class="badge bg-danger">0</div>
+      </button> -->
+        <!-- <li class="nav-item" ><a class="nav-link" routerLink="signup" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        <li class="nav-item">
+          <a *ngIf="!showProfile; else p" class="nav-link" routerLink="/cardview" routerLinkActive="active"><span class="fa fa-sign-in"></span> Login</a>
+        <ng-template #p>
+          <a  class="nav-link" [routerLink]="['/customer/',customerid]" routerLinkActive="active"><span class="fa fa-user"></span></a>
+        </ng-template></li>
+      </ul>
+      
+    </div>
+    
+  </nav>

@@ -1,0 +1,79 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-7">
+        <div class="left border">
+            <div class="row"> <span class="header">Place Order</span>
+                <div class="form1" > 
+                    <span>Address :</span> <input [(ngModel)]="orderAddress" type="text"  class="row-3" placeholder="Linda Williams"> 
+                    <div class="row">
+                        <div class="col-4"><span>City :</span> <input class="form-control"  [(ngModel)]="city" placeholder=""> </div>
+                        <div class="col-4"><span>State :</span> <input class="form-control" name="state" [(ngModel)]="state" placeholder=""> </div>
+                    </div> 
+                    <div class="col-4"><span>Zipcode :</span> <input  name="zip" [(ngModel)]="zipcode" placeholder=""> </div>
+                    <span>Phone No.:</span> <input [(ngModel)]="phone" name = "phone" class="form-control" placeholder="">
+                </div>               
+                 
+                    </div>
+                </div>
+                <hr>
+            <div class="row"> <span class="header">Payment</span>            
+             
+            <div class="col-md-6">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="card-tab" data-toggle="tab" href="#card" role="tab" aria-controls="card" aria-selected="true">Card</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="upi-tab" data-toggle="tab" href="#upi" role="tab" aria-controls="upi" aria-selected="false">UPI</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active"  id="card" role="tabpanel" aria-labelledby="card-tab">
+                        <div class="form1"> <span>Cardholder's name:</span> <input placeholder="Name"> <span>Card Number:</span> <input placeholder="0125 6780 4567 9909">
+                            <div class="row">
+                                <div class="col-4"><span>Expiry date:</span> <input placeholder="YY/MM"> </div>
+                                <div class="col-4"><span>CVV:</span> <input id="cvv"> </div>
+                            </div>
+                        </div>        
+                    </div>
+                    <div class="tab-pane fade" id="upi" role="tabpanel" aria-labelledby="upi-tab">
+                        <div class="form1"> <span>UPI ID:</span> <input placeholder="123@okicici"> 
+                            
+                        </div>                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-5">
+        <div class="right border">
+            <div class="header">Order Summary</div>            
+            <div class="row item" *ngFor="let c of cart">
+                <div class="col-4 align-self-center"><img class="img-fluid" src="{{c.product.productImagesrc}}"></div>
+                <div class="col-8">                    
+                    <div class="row">{{c.product.productName}}</div>
+                    <div class="row">Price:{{c.product.productPrice}}</div>
+                    <div class="row">Quantity:{{c.cartproductQuantity}}</div>
+                    <div class="row">Subtotal:{{c.cartproductQuantity*c.product.productPrice}}</div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="row lower">
+                <div class="col text-left"><b>Total</b></div>
+                <div class="col text-right"><b>{{grandTotal}}</b></div>
+            </div>
+            
+             <button (click)="porder()" class="btn">Place order</button>
+            
+        </div>
+    </div>
+</div>
+    </div>
+
+
+

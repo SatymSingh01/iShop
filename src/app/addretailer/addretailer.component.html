@@ -1,0 +1,27 @@
+<div class ="container-sm align-items-center">
+    <h1 style="text-align: center;" >Retailer Details</h1>
+    <form [formGroup]="addRetailer" (ngSubmit)="addretailer()">
+        
+
+        <div class="form-Group">
+            <label>Retailer Name</label>
+            <input formControlName="retailerName" type="text" id="retailername"class="form-control">
+        </div>
+
+        <div class="form-Group">
+            <label>Retailer E-mail</label>
+            <input formControlName="retailerEmail" type="text" class="form-control">
+        </div>
+
+        <div class="form-Group">
+            <label>Retailer MobileNo.</label>
+            <input formControlName="retailerPhone" type="number" class="form-control">
+        </div>
+        <br>
+        <!-- [disabled]="addRetailer.invalid" -->
+        <button class ="button btn"  type="submit"  >Submit</button>
+      <!-- {{addProduct.value| json}} -->
+     
+    </form>
+ 
+ </div>

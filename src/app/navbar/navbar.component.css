@@ -1,0 +1,43 @@
+.navbar {
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: .5rem 1rem;
+    background-color: rgba(5, 71, 68, 1)
+}
+.form-control{
+    border: radius 3px; 
+    width: 485px;
+    margin-left: 20px;
+}
+.search-icon{
+    position:fixed;
+    right: 29%;
+    top: 30px;
+    cursor: pointer;
+    color: rgb(2, 2, 17);
+
+}
+.nav-link,.nav-item{
+    color: aliceblue;
+}
+.navbar-brand{
+    color: aliceblue;
+    padding-top: 1%;
+}
+.btn{
+    
+    background-color: rgba(5, 71, 68, 1);
+}
+
+.d-flex{
+    padding-left: 10%;
+    border: radius 3px; 
+    width: 600px;
+    margin-left: 20px;
+}
+
+.nav{
+   padding-left:10% ;
+}
